@@ -23,21 +23,23 @@
      homeManagerConfigurations = {
        xaerru = home-manager.lib.homeManagerConfiguration {
          inherit system pkgs;
-	 username = "xaerru";
-	 homeDirectory = "/home/xaerru";
+         username = "xaerru";
+         homeDirectory = "/home/xaerru";
 	 configuration = {
-	    ./users/xaerru
+           imports = [
+             ./users/xaerru
+	   ];
 	 };
        };
      };
      nixosConfigurations = {
        nixos = lib.nixosSystem {
          inherit system;
-
-	 modules = [
+         modules = [
            ./hosts/nienna/configuration.nix
 	 ];
        };
+
+       };
      };
-  };
 }
