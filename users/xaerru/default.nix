@@ -1,8 +1,8 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
   programs.home-manager.enable = true;
-  environment.systemPackages = with pkgs; [ dwm ];
+  home.packages= with pkgs; [ dwm ];
   nixpkgs.overlays = [
     (self: super: {
       dwm = super.dwm.overrideAttrs (oldAttrs: rec {
