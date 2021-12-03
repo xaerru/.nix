@@ -33,7 +33,7 @@
        };
      };
      nixosConfigurations = {
-       nixos = lib.nixosSystem {
+       nienna = lib.nixosSystem {
          inherit system;
          modules = [
            ./hosts/nienna/configuration.nix
