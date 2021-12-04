@@ -2,7 +2,7 @@
 
 {
   programs.home-manager.enable = true;
-  home.packages= with pkgs; [ dwm ];
+  home.packages= with pkgs; [ dwm zoom-us ];
   nixpkgs.overlays = [
     (self: super: {
       dwm = super.dwm.overrideAttrs (oldAttrs: rec {
