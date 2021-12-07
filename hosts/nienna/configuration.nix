@@ -5,17 +5,16 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  imports = [ # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
 
   nix = {
     package = pkgs.nixFlakes;
     extraOptions = ''
       experimental-features = nix-command flakes
     '';
-   };
+  };
 
   # Use the systemd-boot EFI boot loader.
   boot.loader = {
@@ -33,11 +32,13 @@
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   networking.hostName = "nienna"; # Define your hostname.
-  networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  networking.wireless.enable =
+    true; # Enables wireless support via wpa_supplicant.
   networking.wireless.interfaces = [ "wlo1" ];
   networking.wireless.networks = {
     BSNLHOME = {
-      pskRaw = "600249ce41cefcc15efbd6b55ec3621911e13e75f24244f2fdc0496394d4c969";
+      pskRaw =
+        "600249ce41cefcc15efbd6b55ec3621911e13e75f24244f2fdc0496394d4c969";
     };
   };
 
@@ -86,7 +87,7 @@
   fonts.fonts = with pkgs; [
     noto-fonts
     noto-fonts-cjk
-    noto-fonts-emoji 
+    noto-fonts-emoji
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
   ];
 
@@ -95,13 +96,30 @@
   environment.systemPackages = with pkgs; [
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
-    gcc git gnumake
+    gcc
+    git
+    gnumake
     lynx
     alacritty
     brave
     qutebrowser
     dunst
-    feh picom fish tmux exa fd dust xclip cmake ninja gcc dmenu neovim hsetroot mpv firefox
+    feh
+    picom
+    fish
+    tmux
+    exa
+    fd
+    dust
+    xclip
+    cmake
+    ninja
+    gcc
+    dmenu
+    neovim
+    hsetroot
+    mpv
+    firefox
   ];
   environment.etc."X11/xorg.conf.d/20-intel.conf" = {
     text = ''
@@ -119,7 +137,7 @@
     enable = true;
     extraPackages = with pkgs; [
       intel-media-driver # LIBVA_DRIVER_NAME=iHD
-      vaapiIntel         # LIBVA_DRIVER_NAME=i965 (older but works better for Firefox/Chromium)
+      vaapiIntel # LIBVA_DRIVER_NAME=i965 (older but works better for Firefox/Chromium)
       vaapiVdpau
       libvdpau-va-gl
     ];
