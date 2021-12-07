@@ -7,6 +7,7 @@
   programs.home-manager.enable = true;
   home.packages = with pkgs; [
     zoom-us
+    gnupg
     (dwm.overrideAttrs (oldAttrs: rec {
       patches = [
         ./config/dwm/xaerru-custom-config.diff
