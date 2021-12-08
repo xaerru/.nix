@@ -64,9 +64,15 @@
   };
 
   # services.xserver.xkbOptions = "eurosign:e";
+  services.pcscd.enable = true;
 
   # Enable CUPS to print documents.
   # services.printing.enable = true;
+  programs.ssh.startAgent = false;
+  programs.gnupg.agent = {
+      enable = true;
+      enableSSHSupport = true;
+  };
 
   # Enable sound.
   sound.enable = true;
