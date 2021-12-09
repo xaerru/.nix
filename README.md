@@ -1,1 +1,1 @@
-# NixOS Dotfiles
+# My NixOS configuration files
