@@ -5,11 +5,6 @@
   home.homeDirectory = "/home/xaerru";
   home.stateVersion = "22.05";
   programs.home-manager.enable = true;
-  services.gpg-agent = {
-    enable = true;
-    pinentryFlavor = "curses";
-    enableSshSupport = true;
-  };
   home.packages = with pkgs; [
     zoom-us
     pinentry-curses
