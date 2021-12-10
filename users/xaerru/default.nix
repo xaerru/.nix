@@ -1,8 +1,23 @@
 { config, pkgs, ... }:
 
 {
+  home.username = "xaerru";
+  home.homeDirectory = "/home/xaerru";
   home.stateVersion = "22.05";
   programs.home-manager.enable = true;
+  programs.bash.enable = true;
+  services.gpg-agent = {
+    enable = true;
+    enableSshSupport = true;
+    pinentryFlavor = null;
+    extraConfig = ''
+      pinentry-program ${pkgs.pinentry.curses}/bin/pinentry
+    '';
+    defaultCacheTtl = 34560000;
+    defaultCacheTtlSsh = 34560000;
+    maxCacheTtl = 34560000;
+    maxCacheTtlSsh = 34560000;
+  };
   home.packages = with pkgs; [
     zoom-us
     pinentry-curses
