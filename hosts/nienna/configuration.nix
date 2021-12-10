@@ -44,6 +44,10 @@
 
   # Set your time zone.
   time.timeZone = "Asia/Kolkata";
+  services.kmonad = {
+    enable = true;
+    configfiles = [ ../../users/xaerru/config/kmonad/ducky.kbd ];
+  };
 
   # The global useDHCP flag is deprecated, therefore explicitly set to false here.
   # Per-interface useDHCP will be mandatory in the future, so this generated config
@@ -78,6 +82,7 @@
   services.xserver.displayManager.startx.enable = true;
   services.xserver.libinput.enable = true;
   services.xserver.libinput.touchpad.naturalScrolling = true;
+  services.xserver.xkbOptions = "compose:ralt";
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.xaerru = {
