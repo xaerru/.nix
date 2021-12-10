@@ -64,7 +64,6 @@
   };
 
   # services.xserver.xkbOptions = "eurosign:e";
-  services.pcscd.enable = true;
 
   # Enable CUPS to print documents.
   # services.printing.enable = true;
