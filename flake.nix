@@ -7,15 +7,25 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    flake-utils = {
+      url = "github:numtide/flake-utils";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    kmonad = {
+      url = "github:kmonad/kmonad?dir=nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-utils.follows = "flake-utils";
+    };
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, ... }:
+  outputs = inputs@{ self, nixpkgs, home-manager, kmonad, ... }:
     let
       system = "x86_64-linux";
 
       pkgs = import nixpkgs {
         inherit system;
         config.allowUnfree = true;
+	overlays = [ kmonad.overlay ];
       };
 
       lib = nixpkgs.lib;
@@ -26,6 +36,7 @@
           inherit system pkgs;
           modules = [
             ./hosts/nienna/configuration.nix
+	    kmonad.nixosModule
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
