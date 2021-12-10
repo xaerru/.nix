@@ -14,6 +14,9 @@
     defaultCacheTtlSsh = 34560000;
     maxCacheTtl = 34560000;
     maxCacheTtlSsh = 34560000;
+    extraConfig = ''
+      allow-preset-passphrase
+    '';
   };
   home.packages = with pkgs; [
     zoom-us
