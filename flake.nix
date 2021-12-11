@@ -25,7 +25,7 @@
       pkgs = import nixpkgs {
         inherit system;
         config.allowUnfree = true;
-	overlays = [ kmonad.overlay ];
+        overlays = [ kmonad.overlay ];
       };
 
       lib = nixpkgs.lib;
@@ -36,7 +36,7 @@
           inherit system pkgs;
           modules = [
             ./hosts/nienna/configuration.nix
-	    kmonad.nixosModule
+            kmonad.nixosModule
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
