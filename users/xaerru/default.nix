@@ -18,6 +18,7 @@
       allow-preset-passphrase
     '';
   };
+  xsession.windowManager.xmonad.enable = true;
   home.packages = with pkgs; [
     zoom-us
     pinentry-curses
