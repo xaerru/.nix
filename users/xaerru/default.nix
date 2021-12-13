@@ -25,9 +25,6 @@
   home.packages = with pkgs; [
     zoom-us
     brave
-    qutebrowser
-    dunst
-    feh
     picom
     fish
     tmux
@@ -39,7 +36,6 @@
     ninja
     dmenu
     neovim
-    hsetroot
     mpv
     firefox
     pinentry-curses
