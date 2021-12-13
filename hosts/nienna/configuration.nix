@@ -44,6 +44,7 @@
       wlo1.useDHCP = true;
     };
   };
+
   time.timeZone = "Asia/Kolkata";
   services.kmonad = {
     enable = true;
@@ -111,6 +112,7 @@
     mpv
     firefox
   ];
+
   environment.etc."X11/xorg.conf.d/20-intel.conf" = {
     text = ''
       Section "Device"
@@ -122,6 +124,7 @@
       EndSection
     '';
   };
+
   hardware.opengl = {
     enable = true;
     extraPackages = with pkgs; [
@@ -131,8 +134,10 @@
       libvdpau-va-gl
     ];
   };
+  
   virtualisation.virtualbox.host.enable = true;
   users.extraGroups.vboxusers.members = [ "xaerru" ];
+
   system.stateVersion = "21.11";
 }
 
