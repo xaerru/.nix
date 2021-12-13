@@ -27,7 +27,6 @@
     brave
     picom
     fish
-    tmux
     exa
     fd
     dust
@@ -83,5 +82,15 @@
         "https://raw.githubusercontent.com/theova/base16-qutebrowser/e47e7e03ccb8909a4751d3507cc3c3ad243f13c0/themes/default/base16-default-dark.config.py";
       sha256 = "1nf0wbmjhql5hz4lpy8wfhhcr4449kgg07ls9b5kdbzl2qrrw9gx";
     });
+  };
+  programs.tmux = {
+    enable = true;
+    clock24 = true;
+    plugins = with pkgs.tmuxPlugins; [
+      sensible
+      pain-control
+      fzf-tmux-url
+    ];
+    extraConfig = builtins.readFile ./config/tmux.conf;
   };
 }
