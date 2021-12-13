@@ -29,19 +29,19 @@
   networking = {
     hostName = "nienna";
     wireless = {
-       enable = true;
-       interfaces = [ "wlo1" ];
-       networks = {
-    BSNLHOME = {
-      pskRaw =
-        "600249ce41cefcc15efbd6b55ec3621911e13e75f24244f2fdc0496394d4c969";
-    };
-       };
+      enable = true;
+      interfaces = [ "wlo1" ];
+      networks = {
+        BSNLHOME = {
+          pskRaw =
+            "600249ce41cefcc15efbd6b55ec3621911e13e75f24244f2fdc0496394d4c969";
+        };
+      };
     };
     useDHCP = false;
     interfaces = {
-       eno1.useDHCP = true;
-       wlo1.useDHCP = true;
+      eno1.useDHCP = true;
+      wlo1.useDHCP = true;
     };
   };
   time.timeZone = "Asia/Kolkata";
@@ -61,11 +61,15 @@
   sound.enable = true;
   hardware.pulseaudio.enable = true;
 
-  services.xserver.enable = true;
-  services.xserver.displayManager.startx.enable = true;
-  services.xserver.libinput.enable = true;
-  services.xserver.libinput.touchpad.naturalScrolling = true;
-  services.xserver.xkbOptions = "compose:ralt";
+  services.xserver = {
+    enable = true;
+    displayManager.startx.enable = true;
+    libinput = {
+      enable = true;
+      touchpad.naturalScrolling = true;
+    };
+    xkbOptions = "compose:ralt";
+  };
 
   users.users.xaerru = {
     isNormalUser = true;
@@ -118,7 +122,6 @@
       EndSection
     '';
   };
-  nixpkgs.config.allowBroken = true;
   hardware.opengl = {
     enable = true;
     extraPackages = with pkgs; [
