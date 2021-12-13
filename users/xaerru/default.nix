@@ -1,10 +1,14 @@
 { config, pkgs, ... }:
 
 {
-  home.username = "xaerru";
-  home.homeDirectory = "/home/xaerru";
-  home.stateVersion = "22.05";
+  home = {
+    username = "xaerru";
+    homeDirectory = "/home/xaerru";
+    home.stateVersion = "22.05";
+  };
+
   programs.home-manager.enable = true;
+
   programs.bash.enable = true;
   services.gpg-agent = {
     enable = true;
