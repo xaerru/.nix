@@ -4,7 +4,7 @@
   home = {
     username = "xaerru";
     homeDirectory = "/home/xaerru";
-    home.stateVersion = "22.05";
+    stateVersion = "22.05";
   };
 
   programs.home-manager.enable = true;
@@ -25,6 +25,25 @@
   xsession.windowManager.xmonad.enable = true;
   home.packages = with pkgs; [
     zoom-us
+    alacritty
+    brave
+    qutebrowser
+    dunst
+    feh
+    picom
+    fish
+    tmux
+    exa
+    fd
+    dust
+    xclip
+    cmake
+    ninja
+    dmenu
+    neovim
+    hsetroot
+    mpv
+    firefox
     pinentry-curses
     gnupg
     (dwm.overrideAttrs (oldAttrs: rec {

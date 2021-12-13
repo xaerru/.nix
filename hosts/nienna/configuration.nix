@@ -91,26 +91,6 @@
     git
     gnumake
     lynx
-    alacritty
-    brave
-    qutebrowser
-    dunst
-    feh
-    picom
-    fish
-    tmux
-    exa
-    fd
-    dust
-    xclip
-    cmake
-    ninja
-    gcc
-    dmenu
-    neovim
-    hsetroot
-    mpv
-    firefox
   ];
 
   environment.etc."X11/xorg.conf.d/20-intel.conf" = {
