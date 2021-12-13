@@ -23,6 +23,7 @@
     '';
   };
   home.packages = with pkgs; [
+    fzf
     zoom-us
     brave
     picom
