@@ -64,12 +64,8 @@
           foreground = "0xd8d8d8";
         };
       };
-      env = {
-          TERM = "xterm-256color";
-      };
-      font = {
-        size = 8;
-      };
+      env = { TERM = "xterm-256color"; };
+      font = { size = 8; };
       selection.save_to_clipboard = true;
       window = {
         decorations = "full";
@@ -82,8 +78,13 @@
   };
   programs.qutebrowser = {
     enable = true;
+    settings = {
+      colors.webpage.preferred_color_scheme = "dark";
+      colors.webpage.darkmode.enabled = true;
+    };
     extraConfig = builtins.readFile (builtins.fetchurl {
-      url = https://raw.githubusercontent.com/theova/base16-qutebrowser/e47e7e03ccb8909a4751d3507cc3c3ad243f13c0/themes/default/base16-default-dark.config.py;
+      url =
+        "https://raw.githubusercontent.com/theova/base16-qutebrowser/e47e7e03ccb8909a4751d3507cc3c3ad243f13c0/themes/default/base16-default-dark.config.py";
       sha256 = "1nf0wbmjhql5hz4lpy8wfhhcr4449kgg07ls9b5kdbzl2qrrw9gx";
     });
   };
