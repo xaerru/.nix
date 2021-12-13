@@ -26,11 +26,8 @@
     fzf
     zoom-us
     brave
-    picom
-    fish
     exa
     fd
-    dust
     xclip
     cmake
     ninja
