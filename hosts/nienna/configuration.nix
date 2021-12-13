@@ -1,9 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  imports = [
-    ./hardware-configuration.nix
-  ];
+  imports = [ ./hardware-configuration.nix ];
 
   nix = {
     package = pkgs.nixFlakes;
@@ -12,39 +10,45 @@
     '';
   };
 
-  boot.loader = {
-    efi = {
-      canTouchEfiVariables = true;
-      efiSysMountPoint = "/boot";
+  boot = {
+    loader = {
+      efi = {
+        canTouchEfiVariables = true;
+        efiSysMountPoint = "/boot";
+      };
+      grub = {
+        devices = [ "nodev" ];
+        enable = true;
+        efiSupport = true;
+        useOSProber = true;
+      };
     };
-    grub = {
-      devices = [ "nodev" ];
-      enable = true;
-      efiSupport = true;
-      useOSProber = true;
-    };
+    kernelPackages = pkgs.linuxPackages_latest;
   };
-  boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  networking.hostName = "nienna";
-  networking.wireless.enable = true;
-  networking.wireless.interfaces = [ "wlo1" ];
-  networking.wireless.networks = {
+  networking = {
+    hostName = "nienna";
+    wireless = {
+       enable = true;
+       interfaces = [ "wlo1" ];
+       networks = {
     BSNLHOME = {
       pskRaw =
         "600249ce41cefcc15efbd6b55ec3621911e13e75f24244f2fdc0496394d4c969";
     };
+       };
+    };
+    useDHCP = false;
+    interfaces = {
+       eno1.useDHCP = true;
+       wlo1.useDHCP = true;
+    };
   };
-
   time.timeZone = "Asia/Kolkata";
   services.kmonad = {
     enable = true;
     configfiles = [ ../../users/xaerru/config/kmonad/ducky.kbd ];
   };
-
-  networking.useDHCP = false;
-  networking.interfaces.eno1.useDHCP = true;
-  networking.interfaces.wlo1.useDHCP = true;
 
   i18n.defaultLocale = "en_US.UTF-8";
   console = {
