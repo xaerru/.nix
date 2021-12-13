@@ -22,10 +22,8 @@
       allow-preset-passphrase
     '';
   };
-  xsession.windowManager.xmonad.enable = true;
   home.packages = with pkgs; [
     zoom-us
-    alacritty
     brave
     qutebrowser
     dunst
@@ -57,4 +55,29 @@
       ];
     }))
   ];
+  programs.alacritty = {
+    enable = true;
+    settings = {
+      colors = {
+        primary = {
+          background = "0x282828";
+          foreground = "0xd8d8d8";
+        };
+      };
+      env = {
+          TERM = "xterm-256color";
+      };
+      font = {
+        size = 8;
+      };
+      selection.save_to_clipboard = true;
+      window = {
+        decorations = "full";
+        padding = {
+          x = 5;
+          y = 5;
+        };
+      };
+    };
+  };
 }
