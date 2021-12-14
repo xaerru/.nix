@@ -31,7 +31,6 @@
       lib = nixpkgs.lib;
     in {
       nixosConfigurations = {
-        inherit pkgs system;
         nienna = lib.nixosSystem {
           inherit system pkgs;
           modules = [
@@ -41,7 +40,8 @@
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-              home-manager.users.xaerru = import ./users/xaerru;
+              home-manager.users.xaerru = import ./users/xaerru
+	      {inherit pkgs system;};
             }
           ];
         };
