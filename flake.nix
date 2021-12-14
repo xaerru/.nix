@@ -22,14 +22,14 @@
     let
       system = "x86_64-linux";
 
-      pkgs = import nixpkgs {
-        inherit system;
-        config.allowUnfree = true;
-        overlays = import ./users/xaerru/overlays ++ [ kmonad.overlay ];
-      };
-
-      mkComputer = { username, hostname, extraModules }:
-        nixpkgs.lib.nixosSystem {
+      mkComputer = { username, hostname, extraModules, extraOverlays }:
+        let
+          pkgs = import nixpkgs {
+            inherit system;
+            config.allowUnfree = true;
+            overlays = import (./users + "/${username}/overlays") ++ extraOverlays;
+          };
+        in nixpkgs.lib.nixosSystem {
           inherit system pkgs;
           modules = ([
             (./hosts + "/${hostname}/configuration.nix")
@@ -49,6 +49,7 @@
           username = "xaerru";
           hostname = "nienna";
           extraModules = [ kmonad.nixosModule ];
+	  extraOverlays = [ kmonad.overlay ];
         };
       };
     };
