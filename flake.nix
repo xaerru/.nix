@@ -28,21 +28,28 @@
         overlays = import ./users/xaerru/overlays ++ [kmonad.overlay];
       };
 
-    in {
-      nixosConfigurations = {
-        nienna = nixpkgs.lib.nixosSystem {
-          inherit system;
-          modules = [
-            ./hosts/nienna/configuration.nix 
-            kmonad.nixosModule
+      mkComputer = {username, hostname, extraModules}: nixpkgs.lib.nixosSystem {
+        inherit system pkgs;  
+	modules = (
+	  [
+	    (./hosts + "/${hostname}/configuration.nix")
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-              home-manager.users.xaerru = import ./users/xaerru{inherit pkgs;};
+              home-manager.users."${username}" = import (./users + "/${username}"){inherit pkgs;};
             }
-          ];
-        };
+    	  ] ++ extraModules
+    	);
+      };
+
+    in {
+      nixosConfigurations = {
+        nienna = mkComputer {
+           username = "xaerru";
+	   hostname = "nienna";
+	   extraModules = [kmonad.nixosModule];
+	};
       };
     };
 }
