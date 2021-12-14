@@ -21,26 +21,25 @@
   outputs = inputs@{ self, nixpkgs, home-manager, kmonad, ... }:
     let
       system = "x86_64-linux";
-
       mkComputer = { username, hostname, extraModules, extraOverlays }:
         let
           pkgs = import nixpkgs {
             inherit system;
             config.allowUnfree = true;
-            overlays = import (./users + "/${username}/overlays")
+            overlays = import ./users/${username}/overlays
               ++ extraOverlays;
           };
         in nixpkgs.lib.nixosSystem {
           inherit system pkgs;
           modules = ([
-            (./hosts + "/${hostname}/configuration.nix")
+            ./hosts/${hostname}/configuration.nix
             home-manager.nixosModules.home-manager
             {
               home-manager = {
                 useGlobalPkgs = true;
                 useUserPackages = true;
                 users."${username}" =
-                  import (./users + "/${username}") { inherit pkgs; };
+                  import ./users/${username} { inherit pkgs; };
               };
             }
           ] ++ extraModules);
