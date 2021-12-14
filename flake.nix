@@ -21,18 +21,16 @@
   outputs = inputs@{ self, nixpkgs, home-manager, kmonad, ... }:
     let
       system = "x86_64-linux";
-      xaerru_overlays = import ./users/xaerru/overlays;
 
       pkgs = import nixpkgs {
         inherit system;
         config.allowUnfree = true;
-        overlays = xaerru_overlays ++ [kmonad.overlay];
+        overlays = import ./users/xaerru/overlays ++ [kmonad.overlay];
       };
 
-      lib = nixpkgs.lib;
     in {
       nixosConfigurations = {
-        nienna = lib.nixosSystem {
+        nienna = nixpkgs.lib.nixosSystem {
           inherit system;
           modules = [
             ./hosts/nienna/configuration.nix 
