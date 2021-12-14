@@ -25,31 +25,31 @@
       pkgs = import nixpkgs {
         inherit system;
         config.allowUnfree = true;
-        overlays = import ./users/xaerru/overlays ++ [kmonad.overlay];
+        overlays = import ./users/xaerru/overlays ++ [ kmonad.overlay ];
       };
 
-      mkComputer = {username, hostname, extraModules}: nixpkgs.lib.nixosSystem {
-        inherit system pkgs;  
-	modules = (
-	  [
-	    (./hosts + "/${hostname}/configuration.nix")
+      mkComputer = { username, hostname, extraModules }:
+        nixpkgs.lib.nixosSystem {
+          inherit system pkgs;
+          modules = ([
+            (./hosts + "/${hostname}/configuration.nix")
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-              home-manager.users."${username}" = import (./users + "/${username}"){inherit pkgs;};
+              home-manager.users."${username}" =
+                import (./users + "/${username}") { inherit pkgs; };
             }
-    	  ] ++ extraModules
-    	);
-      };
+          ] ++ extraModules);
+        };
 
     in {
       nixosConfigurations = {
         nienna = mkComputer {
-           username = "xaerru";
-	   hostname = "nienna";
-	   extraModules = [kmonad.nixosModule];
-	};
+          username = "xaerru";
+          hostname = "nienna";
+          extraModules = [ kmonad.nixosModule ];
+        };
       };
     };
 }
