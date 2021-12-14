@@ -21,27 +21,27 @@
   outputs = inputs@{ self, nixpkgs, home-manager, kmonad, ... }:
     let
       system = "x86_64-linux";
+      xaerru_overlays = import ./users/xaerru/overlays;
 
       pkgs = import nixpkgs {
         inherit system;
         config.allowUnfree = true;
-        overlays = [ kmonad.overlay ];
+        overlays = xaerru_overlays ++ [kmonad.overlay];
       };
 
       lib = nixpkgs.lib;
     in {
       nixosConfigurations = {
         nienna = lib.nixosSystem {
-          inherit system pkgs;
+          inherit system;
           modules = [
-            ./hosts/nienna/configuration.nix
+            ./hosts/nienna/configuration.nix 
             kmonad.nixosModule
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-              home-manager.users.xaerru = import ./users/xaerru
-	      {inherit pkgs system;};
+              home-manager.users.xaerru = import ./users/xaerru{inherit pkgs;};
             }
           ];
         };
