@@ -57,8 +57,6 @@
     keyMap = "us";
   };
 
-  programs.ssh.startAgent = false;
-
   sound.enable = true;
   hardware.pulseaudio.enable = true;
 
