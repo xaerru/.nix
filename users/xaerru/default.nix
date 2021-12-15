@@ -18,6 +18,7 @@
     defaultCacheTtlSsh = 34560000;
     maxCacheTtl = 34560000;
     maxCacheTtlSsh = 34560000;
+    sshKeys = [ "13E0B25F8DF3A7D0DAB55F4290D620BE5F61B7CF" ];
     extraConfig = ''
       allow-preset-passphrase
     '';
