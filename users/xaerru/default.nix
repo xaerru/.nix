@@ -82,4 +82,8 @@
     ];
     extraConfig = builtins.readFile ./config/tmux.conf;
   };
+  programs.ssh = {
+     enable = true;
+     extraConfig = builtins.readFile ./config/ssh/config;
+  };
 }
