@@ -38,7 +38,6 @@
     mpv
     firefox
     pinentry-curses
-    gnupg
   ];
   programs.alacritty = {
     enable = true;
@@ -76,15 +75,15 @@
   programs.tmux = {
     enable = true;
     clock24 = true;
-    plugins = with pkgs.tmuxPlugins; [
-      sensible
-      pain-control
-      fzf-tmux-url
-    ];
+    plugins = with pkgs.tmuxPlugins; [ sensible pain-control fzf-tmux-url ];
     extraConfig = builtins.readFile ./config/tmux.conf;
   };
   programs.ssh = {
-     enable = true;
-     extraConfig = builtins.readFile ./config/ssh/config;
+    enable = true;
+    extraConfig = builtins.readFile ./config/ssh/config;
+  };
+  programs.gpg = {
+    enable = true;
+    settings.use-agent = false;
   };
 }
