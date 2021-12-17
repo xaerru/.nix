@@ -96,6 +96,5 @@
     };
     extraConfig = { init = { defaultBranch = "main"; }; };
     lfs = { enable = true; };
-    delta = { enable = true; };
   };
 }
