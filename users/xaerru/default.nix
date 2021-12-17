@@ -91,8 +91,8 @@
     userName = "Gauravsingh Sisodia";
     userEmail = "xaerru@disroot.org";
     signing = {
-       signByDefault = true;
-       key = "68831668597E023C!";
+      signByDefault = true;
+      key = "68831668597E023C!";
     };
     extraConfig = { init = { defaultBranch = "main"; }; };
     lfs = { enable = true; };
