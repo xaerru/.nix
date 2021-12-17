@@ -106,9 +106,6 @@
            "Gauravsingh Sisodia" = "#7cafc2";
 	 };
        };
-       git = {
-         overrideGpg = true;
-       };
        keybindings = {
          universal = {appendNewLine = "<tab>";};
        };
