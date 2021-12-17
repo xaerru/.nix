@@ -100,7 +100,18 @@
   programs.lazygit = {
      enable = true;
      settings = {
-        keybindings = {universal = {appendNewLine = "<tab>";};};
+       gui = {
+         showRandomTip = false;
+	 authorColors = {
+           "Gauravsingh Sisodia" = "#7cafc2";
+	 };
+       };
+       git = {
+         overrideGpg = true;
+       };
+       keybindings = {
+         universal = {appendNewLine = "<tab>";};
+       };
      };
   };
 }
