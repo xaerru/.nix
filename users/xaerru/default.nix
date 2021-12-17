@@ -97,4 +97,10 @@
     extraConfig = { init = { defaultBranch = "main"; }; };
     lfs = { enable = true; };
   };
+  programs.lazygit = {
+     enable = true;
+     settings = {
+        keybindings = {universal = {appendNewLine = "<tab>";};};
+     };
+  };
 }
