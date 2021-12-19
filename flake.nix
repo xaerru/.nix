@@ -21,7 +21,7 @@
   outputs = inputs@{ self, nixpkgs, home-manager, kmonad, ... }:
     let
       system = "x86_64-linux";
-      mkComputer = { username, hostname, extraModules, extraOverlays }:
+      mkComputer = { username, hostname, extraModules ? [], extraOverlays ? [] }:
         let
           pkgs = import nixpkgs {
             inherit system;
