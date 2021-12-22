@@ -34,6 +34,7 @@
         enable = true;
         efiSupport = true;
         useOSProber = true;
+	configurationLimit = 42;
       };
     };
     kernelPackages = pkgs.linuxPackages_latest;
