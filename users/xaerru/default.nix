@@ -24,6 +24,9 @@
     '';
   };
   home.packages = with pkgs; [
+    nixfmt
+    python3
+    ghc
     dwm
     fzf
     zoom-us
