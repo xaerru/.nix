@@ -2,6 +2,7 @@ import XMonad
 import Data.Monoid
 import System.Exit
 import XMonad.Layout.NoBorders
+import XMonad.Hooks.EwmhDesktops
 import XMonad.Hooks.ManageHelpers
 import XMonad.Actions.GroupNavigation
 import XMonad.Util.EZConfig
@@ -141,7 +142,7 @@ myStartupHook = return ()
 
 main = xmonad defaults
 
-defaults = def {
+defaults = ewmh $ def {
         terminal           = myTerminal,
         focusFollowsMouse  = myFocusFollowsMouse,
         clickJustFocuses   = myClickJustFocuses,

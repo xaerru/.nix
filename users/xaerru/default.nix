@@ -24,6 +24,8 @@
     '';
   };
   home.packages = with pkgs; [
+    python39Packages.ueberzug
+    ytfzf
     maim
     xdotool
     playerctl
