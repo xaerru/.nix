@@ -2,6 +2,7 @@ import XMonad
 import Data.Monoid
 import System.Exit
 import XMonad.Layout.NoBorders
+import XMonad.Hooks.ManageHelpers
 import XMonad.Actions.GroupNavigation
 import XMonad.Util.EZConfig
 import XMonad.Layout.ToggleLayouts
@@ -130,10 +131,7 @@ myLayout = tiled ||| Mirror tiled ||| Full
      delta   = 3/100
 
 myManageHook = composeAll
-    [ className =? "MPlayer"        --> doFloat
-    , className =? "Gimp"           --> doFloat
-    , resource  =? "desktop_window" --> doIgnore
-    , resource  =? "kdesktop"       --> doIgnore ]
+    [ className =? "mpv"            --> doFullFloat ]
 
 myEventHook = mempty
 
