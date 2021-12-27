@@ -24,6 +24,9 @@
     '';
   };
   home.packages = with pkgs; [
+    maim
+    xdotool
+    playerctl
     taskwarrior
     nixfmt
     python3
