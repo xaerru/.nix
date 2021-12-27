@@ -24,6 +24,7 @@
     '';
   };
   home.packages = with pkgs; [
+    taskwarrior
     nixfmt
     python3
     ghc
