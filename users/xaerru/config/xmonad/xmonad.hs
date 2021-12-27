@@ -3,6 +3,15 @@ import Data.Monoid
 import System.Exit
 import XMonad.Layout.NoBorders
 import XMonad.Layout.ToggleLayouts
+import XMonad.Actions.PerWorkspaceKeys
+import           XMonad.Actions.CycleWS         ( Direction1D(..)
+                                                , WSType(..)
+                                                , moveTo
+                                                , nextScreen
+                                                , prevScreen
+                                                , shiftTo
+                                                , toggleWS
+                                                )
 
 import qualified XMonad.StackSet as W
 import qualified Data.Map        as M
@@ -92,10 +101,9 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- mod-[1..9], Switch to workspace N
     -- mod-shift-[1..9], Move client to workspace N
     --
-    [((m .|. modm, k), windows $ f i)
-        | (i, k) <- zip (XMonad.workspaces conf) [xK_1 .. xK_9]
-        , (f, m) <- [(W.greedyView, 0), (W.shift, shiftMask)]]
-
+     [ ((modm, k), bindOn [("", windows $ W.greedyView n), (n, toggleWS)])
+  | (n, k) <- zip myWorkspaces ([xK_1 .. xK_9] ++ [xK_0])
+  ]
 
 myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
 
