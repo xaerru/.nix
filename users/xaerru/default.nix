@@ -115,4 +115,8 @@
        };
      };
   };
+  xsession.enable = true;
+  xsession.windowManager.xmonad.enable = true;
+  xsession.windowManager.xmonad.enableContribAndExtras = true;
+  xsession.windowManager.xmonad.config = ./config/xmonad/xmonad.hs;
 }
