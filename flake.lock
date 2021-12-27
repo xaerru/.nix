@@ -46,11 +46,11 @@
       },
       "locked": {
         "dir": "nix",
-        "lastModified": 1639669883,
-        "narHash": "sha256-q2n3C1kjotQl3/iGvMZfc30qABiHYBHK0dXWBqUqus4=",
+        "lastModified": 1640622912,
+        "narHash": "sha256-ToowRn8i4f5XMHGW6ch+Sw4yxuISyW9IY72BP8sgzps=",
         "owner": "kmonad",
         "repo": "kmonad",
-        "rev": "f33b513bd153dc4beaebdd3b4dd6ed83a523ad69",
+        "rev": "a7c3dc65212ca6e0b8129235726af05b82683223",
         "type": "github"
       },
       "original": {

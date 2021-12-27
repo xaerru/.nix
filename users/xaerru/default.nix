@@ -24,6 +24,8 @@
     '';
   };
   home.packages = with pkgs; [
+    weechat
+    ffmpeg
     python39Packages.ueberzug
     ytfzf
     maim
