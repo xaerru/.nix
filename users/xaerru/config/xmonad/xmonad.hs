@@ -2,6 +2,7 @@ import XMonad
 import Data.Monoid
 import System.Exit
 import XMonad.Layout.NoBorders
+import XMonad.Actions.GroupNavigation
 import XMonad.Layout.ToggleLayouts
 import XMonad.Actions.PerWorkspaceKeys
 import           XMonad.Actions.CycleWS         ( Direction1D(..)
@@ -41,6 +42,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- launch dmenu
     , ((modm,               xK_p     ), spawn "dmenu_run")
 
+    , ((modm              , xK_u     ), nextMatch History (return True))
     -- close focused window
     , ((modm .|. shiftMask, xK_c     ), kill)
 
@@ -131,7 +133,7 @@ myManageHook = composeAll
 
 myEventHook = mempty
 
-myLogHook = return ()
+myLogHook = historyHook
 
 myStartupHook = return ()
 
