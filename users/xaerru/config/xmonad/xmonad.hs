@@ -3,6 +3,7 @@ import Data.Monoid
 import System.Exit
 import XMonad.Layout.NoBorders
 import XMonad.Actions.GroupNavigation
+import XMonad.Util.EZConfig
 import XMonad.Layout.ToggleLayouts
 import XMonad.Actions.PerWorkspaceKeys
 import           XMonad.Actions.CycleWS         ( Direction1D(..)
@@ -160,4 +161,18 @@ defaults = def {
         handleEventHook    = myEventHook,
         logHook            = myLogHook,
         startupHook        = myStartupHook
-    }
+    } `additionalKeysP` [ ("<XF86AudioPlay>"       , spawn "playerctl play-pause")
+  , ("M-s p"                 , spawn "playerctl play-pause")
+  , ("<XF86AudioPrev>"       , spawn "playerctl previous")
+  , ("M-s b"                 , spawn "playerctl previous")
+  , ("<XF86AudioNext>"       , spawn "playerctl next")
+  , ("M-s n"                 , spawn "playerctl next")
+  , ("<XF86AudioMute>", spawn "pactl set-sink-mute 0 toggle")
+  , ("<XF86AudioLowerVolume>", spawn "pactl -- set-sink-volume 0 -3%")
+  , ("<XF86AudioRaiseVolume>", spawn "pactl -- set-sink-volume 0 +3%")
+  , ("<XF86Calculator>"      , spawn "qalculate-gtk")
+  , ("<Print>", spawn "maim -su | xclip -selection clipboard -t image/png")
+  , ( "C-<Print>"
+    , spawn "maim -u -i $(xdotool getactivewindow) | xclip -selection clipboard -t image/png"
+    )
+  , ("M-S-s", spawn "maim -u | xclip -selection clipboard -t image/png")]
