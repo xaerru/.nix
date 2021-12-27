@@ -110,8 +110,13 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- mod-shift-[1..9], Move client to workspace N
     --
      [ ((modm, k), bindOn [("", windows $ W.greedyView n), (n, toggleWS)])
-  | (n, k) <- zip myWorkspaces ([xK_1 .. xK_9] ++ [xK_0])
-  ]
+     | (n, k) <- zip myWorkspaces ([xK_1 .. xK_9] ++ [xK_0])
+     ]
+     ++
+     [ ((m .|. modm, k), windows $ f i)
+       | (i, k) <- zip myWorkspaces [xK_1 .. xK_9]
+       , (f, m) <- [(W.shift, shiftMask)]
+       ]
 
 myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
 
