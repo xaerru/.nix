@@ -99,7 +99,6 @@
   environment.systemPackages = with pkgs; [
     vim
     wget
-    jdk
     gcc
     git
     gnumake

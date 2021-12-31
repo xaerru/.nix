@@ -23,6 +23,7 @@
       allow-preset-passphrase
     '';
   };
+  programs.java.enable = true;
   home.packages = with pkgs; [
     weechat
     ffmpeg
