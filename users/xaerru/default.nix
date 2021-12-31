@@ -25,6 +25,8 @@
   };
   programs.java.enable = true;
   home.packages = with pkgs; [
+    unzip
+    qbittorrent
     weechat
     ffmpeg
     python39Packages.ueberzug
