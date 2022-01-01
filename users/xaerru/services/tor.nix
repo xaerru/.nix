@@ -16,7 +16,6 @@ in with lib;
       Unit = {
         Description = "Tor service";
         After = ["network.target"];
-        RefuseManualStart = true;
       };
 
       Service = { ExecStart = "${pkgs.tor}/bin/tor"; };
