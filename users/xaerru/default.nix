@@ -1,6 +1,7 @@
 { pkgs, ... }:
 
 {
+  imports = [./services/tor.nix];
   home = {
     username = "xaerru";
     homeDirectory = "/home/xaerru";
@@ -10,6 +11,7 @@
   programs.home-manager.enable = true;
 
   programs.bash.enable = true;
+  services.tor.enable = true;
   services.gpg-agent = {
     enable = true;
     enableSshSupport = true;
@@ -27,6 +29,8 @@
   home.packages = with pkgs; [
     unzip
     qbittorrent
+    torsocks
+    tor
     weechat
     ffmpeg
     python39Packages.ueberzug
