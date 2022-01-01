@@ -56,6 +56,7 @@
     mpv
     firefox
     pinentry-curses
+    youtube-dl
   ];
   programs.alacritty = {
     enable = true;
