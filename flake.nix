@@ -16,6 +16,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-utils.follows = "flake-utils";
     };
+    nix-colors.url = "github:Misterio77/nix-colors";
   };
 
   outputs = inputs@{ self, nixpkgs, home-manager, kmonad, ... }:
@@ -39,7 +40,7 @@
                 useGlobalPkgs = true;
                 useUserPackages = true;
                 users."${username}" =
-                  import ./users/${username} { inherit pkgs; };
+                  import ./users/${username} { inherit pkgs inputs; };
               };
             }
           ] ++ extraModules);
