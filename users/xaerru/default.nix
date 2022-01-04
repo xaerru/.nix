@@ -27,6 +27,9 @@
   };
   programs.java.enable = true;
   home.packages = with pkgs; [
+    keepassxc
+    aria
+    testdisk
     unzip
     qbittorrent
     torsocks
@@ -130,8 +133,11 @@
        };
      };
   };
-  xsession.enable = true;
-  xsession.windowManager.xmonad.enable = true;
-  xsession.windowManager.xmonad.enableContribAndExtras = true;
-  xsession.windowManager.xmonad.config = ./config/xmonad/xmonad.hs;
+  xsession = {
+     windowManager.xmonad = {
+        enable = true;
+	enableContribAndExtras = true;
+	config = ./config/xmonad/xmonad.hs;
+     };
+  };
 }
