@@ -60,7 +60,6 @@ rec {
     neovim
     mpv
     firefox
-    pinentry-curses
     youtube-dl
   ];
   programs.alacritty = {
@@ -124,6 +123,9 @@ rec {
   programs.lazygit = {
      enable = true;
      settings = {
+       git = {
+          autoFetch = false;
+       };
        gui = {
          showRandomTip = false;
 	 authorColors = {
