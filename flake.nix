@@ -22,6 +22,7 @@
   outputs = inputs@{ self, nixpkgs, home-manager, kmonad, ... }:
     let
       system = "x86_64-linux";
+      pkgs = import nixpkgs {inherit system;};
       mkComputer = { username, hostname, extraModules ? [], extraOverlays ? [] }:
         let
           pkgs = import nixpkgs {
@@ -54,6 +55,9 @@
           extraModules = [ kmonad.nixosModule ];
           extraOverlays = [ kmonad.overlay ];
         };
+      };
+      devShell.${system} = pkgs.mkShell {
+          buildInputs = with pkgs; [ nixUnstable nixfmt ];
       };
     };
 }
