@@ -55,9 +55,9 @@
           extraModules = [ kmonad.nixosModule ];
           extraOverlays = [ kmonad.overlay ];
         };
-        nessa = mkComputer {
+        vana = mkComputer {
           username = "rajveer";
-          hostname = "nessa";
+          hostname = "vana";
         };
       };
       devShell.${system} = pkgs.mkShell {
