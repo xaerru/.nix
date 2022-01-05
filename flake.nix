@@ -55,6 +55,10 @@
           extraModules = [ kmonad.nixosModule ];
           extraOverlays = [ kmonad.overlay ];
         };
+        nessa = mkComputer {
+          username = "rajveer";
+          hostname = "nessa";
+        };
       };
       devShell.${system} = pkgs.mkShell {
           buildInputs = with pkgs; [ nixUnstable nixfmt ];
