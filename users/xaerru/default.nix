@@ -30,6 +30,7 @@ in rec {
     '';
   };
   home.packages = with pkgs; [
+    virt-manager
     keepassxc
     aria
     testdisk

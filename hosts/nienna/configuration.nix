@@ -121,6 +121,8 @@
 
   virtualisation.virtualbox.host.enable = true;
   users.extraGroups.vboxusers.members = [ "xaerru" ];
+  virtualisation.libvirtd.enable = true;
+  users.extraGroups.libvirtd.members = [ "xaerru" ];
 
   system.stateVersion = "21.11";
 }
