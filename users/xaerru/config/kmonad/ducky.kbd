@@ -36,12 +36,12 @@
     qw  (layer-switch qwerty)
     dvp  (layer-switch dvp)
     spc (tap-hold-next-release 250 spc @mod)
-    1 RC-A-F1
-    2 RC-A-F2
-    3 RC-A-F3
-    4 RC-A-F4
-    5 RC-A-F5
-    6 RC-A-F6
+    1 (cmd-button "/home/xaerru/scripts/switch_tty.sh 1")
+    2 (cmd-button "/home/xaerru/scripts/switch_tty.sh 2")
+    3 (cmd-button "/home/xaerru/scripts/switch_tty.sh 3")
+    4 (cmd-button "/home/xaerru/scripts/switch_tty.sh 4")
+    5 (cmd-button "/home/xaerru/scripts/switch_tty.sh 5")
+    6 (cmd-button "/home/xaerru/scripts/switch_tty.sh 6")
 )
 
 (deflayer dvp
