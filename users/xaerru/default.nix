@@ -16,6 +16,7 @@ in rec {
 
   programs.bash.enable = true;
   services.tor.enable = true;
+  services.udiskie.enable = true;
   services.gpg-agent = {
     enable = true;
     enableSshSupport = true;
@@ -34,6 +35,7 @@ in rec {
     keepassxc
     aria
     testdisk
+    udiskie
     unzip
     qbittorrent
     torsocks
