@@ -1,5 +1,6 @@
 import XMonad
 import Data.Monoid
+import Control.Monad (liftM2)
 import System.Exit
 import XMonad.Layout.NoBorders
 import XMonad.Hooks.EwmhDesktops
@@ -137,7 +138,12 @@ myLayout = tiled ||| Mirror tiled ||| Full
      delta   = 3/100
 
 myManageHook = composeAll
-    [ className =? "mpv"            --> doFullFloat ]
+    [ className =? "mpv"            --> doFullFloat
+    , title =? "media"              --> viewShift "6"
+    , className =? "qBittorrent"    --> viewShift "7"
+    ]
+  where
+    viewShift = doF . liftM2 (.) W.greedyView W.shift
 
 myEventHook = mempty
 
