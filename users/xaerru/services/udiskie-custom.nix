@@ -1,21 +1,20 @@
 { config, pkgs, lib, ... }:
 
 let
-  cfg = config.services.udiskie;
+  cfg = config.services.udiskie-custom;
   name = "udiskie";
 
 in with lib;
 
 {
-  options.services.udiskie = with types; {
+  options.services.udiskie-custom = with types; {
     enable = mkEnableOption "Enable udiskie daemon";
   };
 
   config = mkIf cfg.enable {
-    systemd.user.services.udiskie = {
+    systemd.user.services.udiskie-custom = {
       Unit = {
         Description = "udiskie to automount removable media";
-        After = ["default.target"];
       };
 
       Service = { ExecStart = "${pkgs.udiskie}/bin/udiskie -N"; };

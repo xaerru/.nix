@@ -1,0 +1,2 @@
+program_options:
+  notify_command: "/home/xaerru/scripts/udiskie.sh {event} {mount_path}"

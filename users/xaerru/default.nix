@@ -5,18 +5,19 @@ with inputs.nix-colors.lib { inherit pkgs; };
 let 
 colors = inputs.nix-colors.colorSchemes.default-dark.colors;
 in rec {
-  imports = [./services/tor.nix];
+  imports = [./services/tor.nix ./services/udiskie-custom.nix];
   home = {
     username = "xaerru";
     homeDirectory = "/home/xaerru";
     stateVersion = "22.05";
+    sessionPath = ["$HOME/.nix/bin"];
   };
 
   programs.home-manager.enable = true;
 
   programs.bash.enable = true;
   services.tor.enable = true;
-  services.udiskie.enable = true;
+  services.udiskie-custom.enable = true;
   services.gpg-agent = {
     enable = true;
     enableSshSupport = true;
@@ -51,7 +52,6 @@ in rec {
     nixfmt
     python3
     ghc
-    dwm
     fzf
     zoom-us
     brave
