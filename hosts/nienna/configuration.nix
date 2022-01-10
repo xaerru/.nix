@@ -46,9 +46,9 @@
       enable = true;
       interfaces = [ "wlo1" ];
       networks = {
-        BSNLHOME = {
+        JoJo = {
           pskRaw =
-            "600249ce41cefcc15efbd6b55ec3621911e13e75f24244f2fdc0496394d4c969";
+            "25b9c5903c7a501df7c23e6884b272a9a292a895e72d01a1eaf43f860d5d2b09";
         };
       };
     };
