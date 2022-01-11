@@ -5,7 +5,7 @@ with inputs.nix-colors.lib { inherit pkgs; };
 let 
 colors = inputs.nix-colors.colorSchemes.default-dark.colors;
 in rec {
-  imports = [./services/tor.nix ./services/udiskie-custom.nix];
+  imports = [./services/tor.nix];
   home = {
     username = "xaerru";
     homeDirectory = "/home/xaerru";
@@ -20,7 +20,6 @@ in rec {
 
   programs.bash.enable = true;
   services.tor.enable = true;
-  services.udiskie-custom.enable = true;
   services.gpg-agent = {
     enable = true;
     enableSshSupport = true;
@@ -39,7 +38,6 @@ in rec {
     keepassxc
     aria
     testdisk
-    udiskie
     unzip
     qbittorrent
     torsocks
