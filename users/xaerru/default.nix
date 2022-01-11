@@ -11,6 +11,9 @@ in rec {
     homeDirectory = "/home/xaerru";
     stateVersion = "22.05";
     sessionPath = ["$HOME/.nix/bin"];
+    sessionVariables = {
+       CUSTOM_BIN = "$HOME/.nix/bin";
+    };
   };
 
   programs.home-manager.enable = true;
