@@ -39,6 +39,7 @@ in rec {
     aria
     testdisk
     unzip
+    hsetroot
     qbittorrent
     torsocks
     tor
