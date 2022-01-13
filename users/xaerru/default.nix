@@ -34,6 +34,9 @@ in rec {
     '';
   };
   home.packages = with pkgs; [
+    lua
+    luajit
+    bintools-unwrapped
     virt-manager
     keepassxc
     aria
@@ -59,6 +62,7 @@ in rec {
     brave
     exa
     fd
+    ripgrep
     xclip
     cmake
     ninja
