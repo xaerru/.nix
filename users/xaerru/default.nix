@@ -34,7 +34,6 @@ in rec {
     '';
   };
   home.packages = with pkgs; [
-    lua
     luajit
     bintools-unwrapped
     virt-manager
