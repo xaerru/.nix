@@ -52,7 +52,6 @@
         };
       };
     };
-    useDHCP = false;
     interfaces = {
       eno1.useDHCP = true;
       wlo1.useDHCP = true;
