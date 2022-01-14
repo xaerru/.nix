@@ -34,6 +34,7 @@ in rec {
     '';
   };
   home.packages = with pkgs; [
+    authy
     luajit
     bintools-unwrapped
     virt-manager

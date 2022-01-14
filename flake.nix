@@ -27,7 +27,13 @@
         let
           pkgs = import nixpkgs {
             inherit system;
-            config.allowUnfree = true;
+	    config = {
+              allowUnfree = true;
+	      permittedInsecurePackages = [
+	        # Authy
+                "electron-9.4.4"
+              ];
+	    };
             overlays = import ./users/${username}/overlays
               ++ extraOverlays;
           };
