@@ -103,6 +103,7 @@
     gnumake
     lynx
   ];
+  services.getty.autologinUser = "xaerru";
 
   environment.etc."X11/xorg.conf.d/20-intel.conf" = {
     text = ''
