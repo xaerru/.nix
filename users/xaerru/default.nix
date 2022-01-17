@@ -19,7 +19,7 @@ in rec {
   programs.home-manager.enable = true;
 
   programs.bash.enable = true;
-  services.tor.enable = true;
+  #services.tor.enable = true;
   services.gpg-agent = {
     enable = true;
     enableSshSupport = true;
