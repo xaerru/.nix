@@ -34,6 +34,9 @@ in rec {
     '';
   };
   home.packages = with pkgs; [
+    patchelf
+    file
+    du-dust
     authy
     luajit
     bintools-unwrapped
