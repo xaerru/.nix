@@ -4,8 +4,9 @@ with inputs.nix-colors.lib { inherit pkgs; };
 
 let 
 colors = inputs.nix-colors.colorSchemes.default-dark.colors;
+binPath = "/home/xaerru/.nix/bin";
 in rec {
-  imports = [./services/tor.nix];
+  imports = [./services/tor.nix ./services/udiskie-custom.nix];
   home = {
     username = "xaerru";
     homeDirectory = "/home/xaerru";
@@ -19,7 +20,16 @@ in rec {
   programs.home-manager.enable = true;
 
   programs.bash.enable = true;
-  #services.tor.enable = true;
+  services.tor.enable = true;
+  services.udiskie-custom = {
+     enable = true;
+     settings = {
+        program_options = {
+          notify = false;
+	  notify_command = "${binPath}/udiskie.sh {event} {mount_path}";
+	};
+     };
+  };
   services.gpg-agent = {
     enable = true;
     enableSshSupport = true;
@@ -35,6 +45,7 @@ in rec {
   };
   home.packages = with pkgs; [
     patchelf
+    cached-nix-shell
     file
     du-dust
     authy
@@ -44,6 +55,7 @@ in rec {
     keepassxc
     aria
     testdisk
+    udiskie
     unzip
     hsetroot
     qbittorrent
