@@ -139,8 +139,11 @@ myLayout = tiled ||| Mirror tiled ||| Full
 
 myManageHook = composeAll
     [ className =? "mpv"            --> doFullFloat
-    , title =? "media"              --> viewShift "6"
+    , className =? "Virt-manager"   --> viewShift "5"
+    , title     =? "media"          --> viewShift "6"
     , className =? "qBittorrent"    --> viewShift "7"
+    , className =? "zoom"           --> viewShift "8"
+    , className =? "mpv"            --> viewShift "9"
     ]
   where
     viewShift = doF . liftM2 (.) W.greedyView W.shift
