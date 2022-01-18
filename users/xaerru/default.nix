@@ -46,6 +46,7 @@ in rec {
   home.packages = with pkgs; [
     patchelf
     cached-nix-shell
+    man-pages
     file
     du-dust
     authy
