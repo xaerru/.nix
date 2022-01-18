@@ -22,11 +22,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1642117744,
-        "narHash": "sha256-/SvxBe/m6JiRSlKIrgD6LQxee9GGewFyq+lsPxoViMY=",
+        "lastModified": 1642463060,
+        "narHash": "sha256-6xXRxvMk4OV/k6VwJq54pahToT4FCZzOKfbvG7f6l1E=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "a5dd5d5f197724f3065fd39c59c7ccea3c8dcb8f",
+        "rev": "8cf13abffc0808b337590a9e382604ab6c2cb3e7",
         "type": "github"
       },
       "original": {
@@ -46,11 +46,11 @@
       },
       "locked": {
         "dir": "nix",
-        "lastModified": 1641997262,
-        "narHash": "sha256-iH1Xh2Xy7/WX/5COVWvfcIu7FDBw2ZR5N7r3ITjBBXg=",
+        "lastModified": 1642343460,
+        "narHash": "sha256-ZD+AVbeNEsC1cQIRj7Cx6QM4eRQiKEovKD1CxhKTl1Q=",
         "owner": "kmonad",
         "repo": "kmonad",
-        "rev": "c714546da9b6a195516cfda1d640ce4d9838b782",
+        "rev": "25d290b7ac8641772a66dfd6d122561a2a709b4f",
         "type": "github"
       },
       "original": {
@@ -62,11 +62,11 @@
     },
     "nix-colors": {
       "locked": {
-        "lastModified": 1642257683,
-        "narHash": "sha256-j1AdA6zRD4eqLhMqXXlvdP+ePoGCfAFIepodZ1kcjNs=",
+        "lastModified": 1642435738,
+        "narHash": "sha256-8Jr4BWkEM5WP0pqGKF4qy7/b9v7472i0yESKa1sqzCg=",
         "owner": "Misterio77",
         "repo": "nix-colors",
-        "rev": "b26e7acb111b5ab1c8c1f05a79ab5f6aaeb62d3a",
+        "rev": "865f6dc83baf2021a2016f273091bc95e60757ac",
         "type": "github"
       },
       "original": {
