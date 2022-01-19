@@ -355,10 +355,13 @@ in rec {
      };
   };
   xsession = {
-     windowManager.xmonad = {
-        enable = true;
-	enableContribAndExtras = true;
-	config = ./config/xmonad/xmonad.hs;
+     enable = true;
+     windowManager = {
+       xmonad = {
+          enable = true;
+          enableContribAndExtras = true;
+          config = ./config/xmonad/xmonad.hs;
+       };
      };
   };
   gtk = {
@@ -377,5 +380,8 @@ in rec {
     settings = {
       "Net/ThemeName" = "${gtk.theme.name}";
     };
+  };
+  services.dunst = {
+     enable = true;
   };
 }
