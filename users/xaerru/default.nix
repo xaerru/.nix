@@ -356,6 +356,9 @@ in rec {
   };
   xsession = {
      enable = true;
+     initExtra = ''
+       udiskie &
+     '';
      windowManager = {
        xmonad = {
           enable = true;
