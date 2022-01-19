@@ -354,7 +354,7 @@ in rec {
 	 };
        };
        keybindings = {
-         universal = {appendNewLine = "<tab>";};
+         universal = {appendNewline = "<tab>";};
        };
      };
   };
