@@ -85,7 +85,7 @@
 
   users.users.xaerru = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ];
+    extraGroups = [ "wheel" "audio" ];
   };
 
   fonts.fonts = with pkgs; [
