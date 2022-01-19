@@ -47,10 +47,14 @@ in rec {
     patchelf
     cached-nix-shell
     man-pages
+    gdb
     file
     du-dust
     authy
-    luajit
+    lua
+    htop-vim
+    age
+    ltrace
     bintools-unwrapped
     virt-manager
     keepassxc
