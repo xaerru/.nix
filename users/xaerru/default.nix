@@ -46,7 +46,11 @@ in rec {
   home.packages = with pkgs; [
     patchelf
     cached-nix-shell
+    xsel
     man-pages
+    cmus
+    spotdl
+    neomutt
     gdb
     file
     du-dust
