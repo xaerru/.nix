@@ -44,6 +44,9 @@ in rec {
     '';
   };
   home.packages = with pkgs; [
+    clang-tools
+    bear
+    ctags
     patchelf
     cached-nix-shell
     xsel
