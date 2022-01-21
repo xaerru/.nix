@@ -49,6 +49,7 @@ in rec {
     ctags
     patchelf
     cached-nix-shell
+    lxc
     xsel
     man-pages
     cmus
