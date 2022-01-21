@@ -47,6 +47,7 @@ in rec {
     clang-tools
     bear
     ctags
+    linux-manual
     patchelf
     cached-nix-shell
     lxc
