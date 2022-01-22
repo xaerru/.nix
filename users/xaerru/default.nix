@@ -100,6 +100,7 @@ in rec {
     ninja
     dmenu
     neovim
+    sumneko-lua-language-server
     mpv
     firefox
     youtube-dl
