@@ -340,7 +340,7 @@ in rec {
         {
             plugin = battery;
             extraConfig = ''
-                set -g status-right '[#{battery_percentage}][%d-%m:%w][%H:%M]'
+                set -g status-right '[#{battery_percentage}][%d-%m:%w][%H:%M][#H]'
                 set -g status-right-length '150'
             '';
         }
