@@ -2,19 +2,17 @@
 
 with inputs.nix-colors.lib { inherit pkgs; };
 
-let 
-colors = inputs.nix-colors.colorSchemes.default-dark.colors;
-binPath = "/home/xaerru/.nix/bin";
+let
+  colors = inputs.nix-colors.colorSchemes.default-dark.colors;
+  binPath = "/home/xaerru/.nix/bin";
 in rec {
-  imports = [./services/tor.nix ./services/udiskie-custom.nix];
+  imports = [ ./services/tor.nix ./services/udiskie-custom.nix ];
   home = {
     username = "xaerru";
     homeDirectory = "/home/xaerru";
     stateVersion = "22.05";
-    sessionPath = ["$HOME/.nix/bin"];
-    sessionVariables = {
-       CUSTOM_BIN = "$HOME/.nix/bin";
-    };
+    sessionPath = [ "$HOME/.nix/bin" ];
+    sessionVariables = { CUSTOM_BIN = "$HOME/.nix/bin"; };
   };
 
   programs.home-manager.enable = true;
@@ -22,13 +20,13 @@ in rec {
   programs.bash.enable = true;
   #services.tor.enable = true;
   services.udiskie-custom = {
-     enable = true;
-     settings = {
-        program_options = {
-          notify = false;
-	  notify_command = "${binPath}/udiskie.sh {event} {mount_path}";
-	};
-     };
+    enable = true;
+    settings = {
+      program_options = {
+        notify = false;
+        notify_command = "${binPath}/udiskie.sh {event} {mount_path}";
+      };
+    };
   };
   services.gpg-agent = {
     enable = true;
@@ -105,6 +103,7 @@ in rec {
     mpv
     firefox
     youtube-dl
+    tmux-mem-cpu-load
   ];
   programs.alacritty = {
     enable = true;
@@ -181,22 +180,20 @@ in rec {
     enable = true;
     loadAutoconfig = true;
     settings = {
-      tabs = {
-        show = "multiple";
-      };
+      tabs = { show = "multiple"; };
       colors = {
         webpage = {
-	  darkmode = {
-	    enabled = true;
-	    algorithm = "lightness-hsl";
-	    contrast = -.022;
-	    threshold = {
-	      text = 150;
-	      background = 100;
-	    };
-	    policy.images = "always";
-	    grayscale.images = 0.35;
-	  };
+          darkmode = {
+            enabled = true;
+            algorithm = "lightness-hsl";
+            contrast = -.022;
+            threshold = {
+              text = 150;
+              background = 100;
+            };
+            policy.images = "always";
+            grayscale.images = 0.35;
+          };
           preferred_color_scheme = "dark";
           bg = "#${colors.base00}";
         };
@@ -336,15 +333,18 @@ in rec {
     disableConfirmationPrompt = true;
     escapeTime = 150;
     plugins = with pkgs.tmuxPlugins; [
-        sensible pain-control fzf-tmux-url
-        {
-            plugin = battery;
-            extraConfig = ''
-                set -g status-right '[#{battery_percentage}][%d-%m:%w][%H:%M][#H]'
-                set -g status-right-length '150'
-            '';
-        }
-        net-speed yank 
+      sensible
+      pain-control
+      fzf-tmux-url
+      {
+        plugin = battery;
+        extraConfig = ''
+          set -g status-right '[#(tmux-mem-cpu-load)][#{battery_percentage}][%d-%m:%w][%H:%M][#H]'
+          set -g status-right-length '150'
+        '';
+      }
+      net-speed
+      yank
     ];
     extraConfig = builtins.readFile ./config/tmux.conf;
   };
@@ -368,55 +368,47 @@ in rec {
     lfs = { enable = true; };
   };
   programs.lazygit = {
-     enable = true;
-     settings = {
-       git = {
-          autoFetch = false;
-       };
-       gui = {
-         showRandomTip = false;
-	 authorColors = {
-           "Gauravsingh Sisodia" = "#7cafc2";
-	 };
-       };
-       keybindings = {
-         universal = {appendNewline = "<tab>";};
-       };
-     };
+    enable = true;
+    settings = {
+      git = { autoFetch = false; };
+      gui = {
+        showRandomTip = false;
+        authorColors = { "Gauravsingh Sisodia" = "#7cafc2"; };
+      };
+      keybindings = { universal = { appendNewline = "<tab>"; }; };
+    };
   };
   xsession = {
-     enable = true;
-     initExtra = ''
-       udiskie &
-       xsetroot -cursor_name left_ptr
-       hsetroot -solid "#181818"
-     '';
-     windowManager = {
-       xmonad = {
-          enable = true;
-          enableContribAndExtras = true;
-          config = ./config/xmonad/xmonad.hs;
-       };
-     };
+    enable = true;
+    initExtra = ''
+      udiskie &
+      xsetroot -cursor_name left_ptr
+      hsetroot -solid "#181818"
+    '';
+    windowManager = {
+      xmonad = {
+        enable = true;
+        enableContribAndExtras = true;
+        config = ./config/xmonad/xmonad.hs;
+      };
+    };
   };
   gtk = {
-     enable = true;
-     theme = {
+    enable = true;
+    theme = {
       name = "default-dark";
-      package = gtkThemeFromScheme { scheme = inputs.nix-colors.colorSchemes.default-dark; };
+      package = gtkThemeFromScheme {
+        scheme = inputs.nix-colors.colorSchemes.default-dark;
+      };
     };
   };
   qt = {
-     enable = true;
-     platformTheme = "gtk";
+    enable = true;
+    platformTheme = "gtk";
   };
   services.xsettingsd = {
     enable = true;
-    settings = {
-      "Net/ThemeName" = "${gtk.theme.name}";
-    };
+    settings = { "Net/ThemeName" = "${gtk.theme.name}"; };
   };
-  services.dunst = {
-     enable = true;
-  };
+  services.dunst = { enable = true; };
 }
