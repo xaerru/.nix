@@ -339,7 +339,7 @@ in rec {
       {
         plugin = battery;
         extraConfig = ''
-          set -g status-right '[#(tmux-mem-cpu-load)][#{battery_percentage}][%d-%m:%w][%H:%M][#H]'
+          set -g status-right '[#(tmux-mem-cpu-load)][#{battery_color_fg}#{battery_percentage}]#[default][%d-%m:%w][%H:%M][#H]'
           set -g status-right-length '150'
         '';
       }
