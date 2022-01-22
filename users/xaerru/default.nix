@@ -48,6 +48,10 @@ in rec {
     bear
     ctags
     linux-manual
+    stylua
+    cling
+    rustup
+    nodejs
     patchelf
     cached-nix-shell
     lxc
