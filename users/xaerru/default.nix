@@ -382,6 +382,7 @@ in rec {
   };
   xsession = {
     enable = true;
+    scriptPath = ".xinitrc";
     initExtra = ''
       udiskie &
       xsetroot -cursor_name left_ptr
