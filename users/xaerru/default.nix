@@ -44,6 +44,7 @@ in rec {
   home.packages = with pkgs; [
     clang-tools
     rust-analyzer
+    rnix-lsp
     bear
     ctags
     linux-manual
