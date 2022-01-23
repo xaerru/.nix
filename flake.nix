@@ -67,7 +67,7 @@
         };
       };
       devShell.${system} = pkgs.mkShell {
-          buildInputs = with pkgs; [ nixUnstable nixfmt ];
+          buildInputs = with pkgs; [ nixUnstable nixfmt rnix-lsp ];
       };
     };
 }
