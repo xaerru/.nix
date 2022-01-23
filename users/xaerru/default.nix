@@ -43,6 +43,7 @@ in rec {
   };
   home.packages = with pkgs; [
     clang-tools
+    rust-analyzer
     bear
     ctags
     linux-manual
