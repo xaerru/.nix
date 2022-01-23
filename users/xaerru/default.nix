@@ -102,6 +102,8 @@ in rec {
     ninja
     dmenu
     neovim
+    nasm
+    parted
     sumneko-lua-language-server
     mpv
     firefox
