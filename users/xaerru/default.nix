@@ -159,7 +159,6 @@ in rec {
       keybindings = { universal = { appendNewline = "<tab>"; }; };
     };
   };
-  services.dunst = { enable = true; };
   programs.zathura = {
     enable = true;
     options = {
