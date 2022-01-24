@@ -81,6 +81,8 @@
       touchpad.naturalScrolling = true;
     };
     xkbOptions = "compose:ralt";
+    autoRepeatDelay = 300;
+    autoRepeatInterval = 15;
   };
 
   users.users.xaerru = {
