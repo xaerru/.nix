@@ -348,8 +348,6 @@ in rec {
           set -g status-right-length '150'
         '';
       }
-      net-speed
-      yank
     ];
     extraConfig = builtins.readFile ./config/tmux.conf;
   };
