@@ -23,7 +23,7 @@
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {inherit system;};
-      mkComputer = { username, hostname, extraModules ? [], extraOverlays ? [] }:
+      mkComputer = { username, hostname, features ? [], extraModules ? [], extraOverlays ? [] }:
         let
           pkgs = import nixpkgs {
             inherit system;
@@ -37,6 +37,7 @@
             overlays = import ./users/${username}/overlays
               ++ extraOverlays;
           };
+          lib = pkgs.lib;
         in nixpkgs.lib.nixosSystem {
           inherit system pkgs;
           modules = ([
@@ -46,8 +47,8 @@
               home-manager = {
                 useGlobalPkgs = true;
                 useUserPackages = true;
-                users."${username}" =
-                  import ./users/${username} { inherit pkgs inputs; };
+                extraSpecialArgs = {inherit pkgs features inputs system hostname;};
+                users."${username}" = import ./users/${username};
               };
             }
           ] ++ extraModules);
@@ -58,6 +59,7 @@
         nienna = mkComputer {
           username = "xaerru";
           hostname = "nienna";
+          features = ["xserver"];
           extraModules = [ kmonad.nixosModule ];
           extraOverlays = [ kmonad.overlay ];
         };
