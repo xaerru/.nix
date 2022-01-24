@@ -5,7 +5,7 @@
         (super.fetchpatch {
           url =
             "https://dwm.suckless.org/patches/noborder/dwm-noborderfloatingfix-6.2.diff";
-          sha256 = "114xcy1qipq6cyyc051yy27aqqkfrhrv9gjn8fli6gmkr0x6pk52";
+          sha256 = "CrKItgReKz3G0mEPYiqCHW3xHl6A3oZ0YiQ4oI9KXSw=";
         })
       ];
     });
