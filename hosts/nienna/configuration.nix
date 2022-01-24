@@ -87,7 +87,7 @@
 
   users.users.xaerru = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "audio" "lxd" ];
+    extraGroups = [ "wheel" "audio" "input" "lxd" "vboxusers" "libvirtd" ];
   };
 
   fonts.fonts = with pkgs; [
@@ -122,9 +122,7 @@
   programs.dconf.enable = true;
 
   virtualisation.virtualbox.host.enable = true;
-  users.extraGroups.vboxusers.members = [ "xaerru" ];
   virtualisation.libvirtd.enable = true;
-  users.extraGroups.libvirtd.members = [ "xaerru" ];
   virtualisation.lxd.enable = true;
 
   system.stateVersion = "21.11";
