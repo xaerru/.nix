@@ -56,7 +56,6 @@ in rec {
     patchelf
     cached-nix-shell
     lxc
-    xsel
     man-pages
     cmus
     spotdl
@@ -64,49 +63,34 @@ in rec {
     gdb
     file
     du-dust
-    authy
     lua
     htop-vim
     age
     ltrace
     bintools-unwrapped
-    virt-manager
-    keepassxc
     aria
     testdisk
     udiskie
     unzip
-    hsetroot
-    qbittorrent
     torsocks
     tor
     weechat
     ffmpeg
-    python39Packages.ueberzug
-    ytfzf
-    maim
-    xdotool
     playerctl
     taskwarrior
     nixfmt
     python3
     ghc
     fzf
-    zoom-us
-    brave
     exa
     fd
     ripgrep
-    xclip
     cmake
     ninja
-    dmenu
     neovim
     nasm
     parted
     sumneko-lua-language-server
-    mpv
-    firefox
     youtube-dl
     tmux-mem-cpu-load
   ];
