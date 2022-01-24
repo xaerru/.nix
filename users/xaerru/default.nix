@@ -159,23 +159,6 @@ in rec {
       keybindings = { universal = { appendNewline = "<tab>"; }; };
     };
   };
-  gtk = {
-    enable = true;
-    theme = {
-      name = "default-dark";
-      package = gtkThemeFromScheme {
-        scheme = inputs.nix-colors.colorSchemes.default-dark;
-      };
-    };
-  };
-  qt = {
-    enable = true;
-    platformTheme = "gtk";
-  };
-  services.xsettingsd = {
-    enable = true;
-    settings = { "Net/ThemeName" = "${gtk.theme.name}"; };
-  };
   services.dunst = { enable = true; };
   programs.zathura = {
     enable = true;
