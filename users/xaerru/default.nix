@@ -1,9 +1,9 @@
-{ pkgs, features, inputs, ... }:
+{ pkgs, features, inputs, config, ... }:
 
 with inputs.nix-colors.lib { inherit pkgs; };
 
 let
-  colors = inputs.nix-colors.colorSchemes.default-dark.colors;
+  colors = config.colorscheme.colors;
   binPath = "/home/xaerru/.nix/bin";
 in rec {
   imports = [ ./colors.nix ./services/tor.nix ./services/udiskie-custom.nix ]++pkgs.lib.forEach features (f: (./features + "/${f}"));
@@ -91,7 +91,7 @@ in rec {
       git = { autoFetch = false; };
       gui = {
         showRandomTip = false;
-        authorColors = { "Gauravsingh Sisodia" = "#7cafc2"; };
+        authorColors = { "Gauravsingh Sisodia" = "#${colors.base04}"; };
       };
       keybindings = { universal = { appendNewline = "<tab>"; }; };
     };
