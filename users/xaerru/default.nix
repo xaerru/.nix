@@ -17,7 +17,6 @@ in rec {
 
   programs.home-manager.enable = true;
 
-  programs.bash.enable = true;
   #services.tor.enable = true;
   services.udiskie-custom = {
     enable = true;

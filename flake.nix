@@ -59,7 +59,7 @@
         nienna = mkComputer {
           username = "xaerru";
           hostname = "nienna";
-          features = ["xserver"];
+          features = ["xserver" "shell"];
           extraModules = [ kmonad.nixosModule ];
           extraOverlays = [ kmonad.overlay ];
         };
