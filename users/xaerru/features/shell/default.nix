@@ -23,6 +23,7 @@
     ffmpeg
     fzf
     ltrace
+    bintools-unwrapped
     acpi
     udiskie
     playerctl
