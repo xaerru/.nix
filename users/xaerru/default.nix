@@ -6,7 +6,7 @@ let
   colors = inputs.nix-colors.colorSchemes.default-dark.colors;
   binPath = "/home/xaerru/.nix/bin";
 in rec {
-  imports = [ ./services/tor.nix ./services/udiskie-custom.nix ]++pkgs.lib.forEach features (f: (./features + "/${f}"));
+  imports = [ ./colors.nix ./services/tor.nix ./services/udiskie-custom.nix ]++pkgs.lib.forEach features (f: (./features + "/${f}"));
   home = {
     username = "xaerru";
     homeDirectory = "/home/xaerru";
