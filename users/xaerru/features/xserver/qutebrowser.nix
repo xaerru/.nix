@@ -1,9 +1,7 @@
-{ pkgs, inputs, ... }:
-
-with inputs.nix-colors.lib { inherit pkgs; };
+{ pkgs, inputs, config, ... }:
 
 let
-  colors = inputs.nix-colors.colorSchemes.default-dark.colors;
+  colors = config.colorscheme.colors;
 in
 {
   programs.qutebrowser = {
