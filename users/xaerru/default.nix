@@ -48,7 +48,6 @@ in rec {
     ctags
     linux-manual
     stylua
-    acpi
     cling
     rustup
     nodejs
@@ -56,42 +55,16 @@ in rec {
     cached-nix-shell
     lxc
     man-pages
-    cmus
-    spotdl
-    neomutt
     gdb
-    file
-    du-dust
     lua
-    htop-vim
-    age
-    ltrace
-    bintools-unwrapped
-    aria
-    testdisk
-    udiskie
-    unzip
-    torsocks
-    tor
-    weechat
-    ffmpeg
-    playerctl
-    taskwarrior
     nixfmt
     python3
     ghc
-    fzf
-    exa
-    fd
-    ripgrep
     cmake
     ninja
     neovim
     nasm
-    parted
     sumneko-lua-language-server
-    youtube-dl
-    tmux-mem-cpu-load
   ];
   programs.ssh = {
     enable = true;
