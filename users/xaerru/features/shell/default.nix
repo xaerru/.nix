@@ -15,6 +15,7 @@
     torsocks
     taskwarrior
     exa
+    bat
     parted
     tmux-mem-cpu-load
     youtube-dl
