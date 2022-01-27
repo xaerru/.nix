@@ -6,7 +6,8 @@ let
   colors = config.colorscheme.colors;
   binPath = "/home/xaerru/.nix/bin";
 in rec {
-  imports = [ ./colors.nix ./services/tor.nix ./services/udiskie-custom.nix ]++pkgs.lib.forEach features (f: (./features + "/${f}"));
+  imports = [ ./colors.nix ./services/tor.nix ./services/udiskie-custom.nix ]
+    ++ pkgs.lib.forEach features (f: (./features + "/${f}"));
   home = {
     username = "xaerru";
     homeDirectory = "/home/xaerru";
@@ -78,6 +79,7 @@ in rec {
   };
   programs.git = {
     enable = true;
+    package = pkgs.gitFull;
     userName = "Gauravsingh Sisodia";
     userEmail = "xaerru@disroot.org";
     signing = {
