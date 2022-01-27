@@ -42,6 +42,7 @@ in rec {
   };
   home.packages = with pkgs; [
     clang-tools
+    valgrind
     rust-analyzer
     rnix-lsp
     bear
