@@ -1,9 +1,11 @@
 { pkgs, inputs, ... }: 
+
 {
   imports = [
       ./bash.nix
       ./tmux.nix
       ./autojump.nix
+      ./direnv.nix
   ];
   home.packages = with pkgs; [
     cmus
