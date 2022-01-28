@@ -21,7 +21,7 @@
     xclip
     xsel
     dmenu
-    authy
+    #authy
     mpv
     firefox
     keepassxc
