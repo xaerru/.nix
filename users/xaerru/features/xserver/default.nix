@@ -22,6 +22,7 @@
     xsel
     dmenu
     #authy
+    webcamoid
     mpv
     firefox
     keepassxc
