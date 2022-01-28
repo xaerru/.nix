@@ -9,6 +9,7 @@
   home.packages = with pkgs; [
     cmus
     htop-vim
+    iftop
     age
     aria
     testdisk
