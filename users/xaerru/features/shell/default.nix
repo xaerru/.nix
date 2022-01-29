@@ -1,11 +1,7 @@
-{ pkgs, inputs, ... }: 
+{ pkgs, inputs, ... }:
 
 {
-  imports = [
-      ./bash.nix
-      ./tmux.nix
-      ./autojump.nix
-  ];
+  imports = [ ./bash.nix ./tmux.nix ./autojump.nix ];
   home.packages = with pkgs; [
     cmus
     htop-vim

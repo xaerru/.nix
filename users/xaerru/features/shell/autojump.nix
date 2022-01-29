@@ -1,7 +1,5 @@
 { ... }:
 
 {
-  programs.autojump = {
-    enable = true;
-  };
+  programs.autojump = { enable = true; };
 }

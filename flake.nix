@@ -22,33 +22,36 @@
   outputs = inputs@{ self, nixpkgs, home-manager, kmonad, ... }:
     let
       system = "x86_64-linux";
-      pkgs = import nixpkgs {inherit system;};
-      mkComputer = { username, hostname, features ? [], extraModules ? [], extraOverlays ? [] }:
+      pkgs = import nixpkgs { inherit system; };
+      mkComputer = { username, hostname, features ? [ ], extraModules ? [ ]
+        , extraOverlays ? [ ] }:
         let
           pkgs = import nixpkgs {
             inherit system;
-	    config = {
+            config = {
               allowUnfree = true;
-	      permittedInsecurePackages = [
-	        # Authy
+              permittedInsecurePackages = [
+                # Authy
                 "electron-9.4.4"
               ];
-	    };
-            overlays = import ./users/${username}/overlays
+            };
+            overlays = import (./users + "/${username}/overlays")
               ++ extraOverlays;
           };
           lib = pkgs.lib;
         in nixpkgs.lib.nixosSystem {
           inherit system pkgs;
           modules = ([
-            ./hosts/${hostname}/configuration.nix
+            (./hosts + "/${hostname}/configuration.nix")
             home-manager.nixosModules.home-manager
             {
               home-manager = {
                 useGlobalPkgs = true;
                 useUserPackages = true;
-                extraSpecialArgs = {inherit pkgs features inputs system hostname;};
-                users."${username}" = import ./users/${username};
+                extraSpecialArgs = {
+                  inherit pkgs features inputs system hostname;
+                };
+                users."${username}" = import (./users + "/${username}");
               };
             }
           ] ++ extraModules);
@@ -59,7 +62,7 @@
         nienna = mkComputer {
           username = "xaerru";
           hostname = "nienna";
-          features = ["xserver" "shell"];
+          features = [ "xserver" "shell" ];
           extraModules = [ kmonad.nixosModule ];
           extraOverlays = [ kmonad.overlay ];
         };
@@ -69,7 +72,7 @@
         };
       };
       devShell.${system} = pkgs.mkShell {
-          buildInputs = with pkgs; [ nixUnstable nixfmt rnix-lsp ];
+        buildInputs = with pkgs; [ nixUnstable nixfmt rnix-lsp ];
       };
     };
 }

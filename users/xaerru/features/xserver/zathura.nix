@@ -1,9 +1,7 @@
-{ pkgs, inputs, config, ... }: 
+{ pkgs, inputs, config, ... }:
 
-let
-  colors = config.colorscheme.colors;
-in
-{
+let colors = config.colorscheme.colors;
+in {
   programs.zathura = {
     enable = true;
     options = {

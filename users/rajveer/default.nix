@@ -1,2 +1,1 @@
-{ pkgs, inputs, ... }:
-{}
+{ pkgs, inputs, ... }: { }

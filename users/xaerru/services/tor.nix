@@ -15,7 +15,7 @@ in with lib;
     systemd.user.services.tor = {
       Unit = {
         Description = "Tor service";
-        After = ["network.target"];
+        After = [ "network.target" ];
       };
 
       Service = { ExecStart = "${pkgs.tor}/bin/tor"; };

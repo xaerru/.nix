@@ -2,7 +2,7 @@
 
 {
   imports = [ ./hardware-configuration.nix ];
-  
+
   nixpkgs.config.packageOverrides = pkgs: {
     vaapiIntel = pkgs.vaapiIntel.override { enableHybridCodec = true; };
   };
@@ -10,7 +10,7 @@
     enable = true;
     extraPackages = with pkgs; [
       intel-media-driver # LIBVA_DRIVER_NAME=iHD
-      vaapiIntel         # LIBVA_DRIVER_NAME=i965 (older but works better for Firefox/Chromium)
+      vaapiIntel # LIBVA_DRIVER_NAME=i965 (older but works better for Firefox/Chromium)
       vaapiVdpau
       libvdpau-va-gl
     ];
@@ -19,9 +19,9 @@
   nix = {
     package = pkgs.nixUnstable;
     extraOptions = ''
-        experimental-features = nix-command flakes
-        keep-outputs = true
-        keep-derivations = true
+      experimental-features = nix-command flakes
+      keep-outputs = true
+      keep-derivations = true
     '';
   };
 
@@ -36,7 +36,7 @@
         enable = true;
         efiSupport = true;
         useOSProber = true;
-	configurationLimit = 42;
+        configurationLimit = 42;
       };
     };
     kernelPackages = pkgs.linuxPackages_latest;
@@ -99,14 +99,7 @@
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
   ];
 
-  environment.systemPackages = with pkgs; [
-    vim
-    wget
-    gcc
-    git
-    gnumake
-    lynx
-  ];
+  environment.systemPackages = with pkgs; [ vim wget gcc git gnumake lynx ];
   services.getty.autologinUser = "xaerru";
 
   environment.etc."X11/xorg.conf.d/20-intel.conf" = {

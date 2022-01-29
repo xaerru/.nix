@@ -5,10 +5,9 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  imports = [ # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
 
   # Use the GRUB 2 boot loader.
   boot.loader.grub.enable = true;
@@ -46,11 +45,8 @@
   services.xserver = {
     enable = true;
     desktopManager.lxqt.enable = true;
-    videoDrivers = ["intel"];
+    videoDrivers = [ "intel" ];
   };
-
-
-  
 
   # Configure keymap in X11
   # services.xserver.layout = "us";

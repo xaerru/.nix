@@ -11,12 +11,12 @@ in with lib;
     enable = mkEnableOption "Enable udiskie daemon";
     settings = mkOption {
       type = yamlFormat.type;
-      default = {};
+      default = { };
     };
   };
 
   config = mkIf cfg.enable {
-    home.packages = [pkgs.udiskie];
+    home.packages = [ pkgs.udiskie ];
     xdg.configFile."udiskie/config.yml" = mkIf (cfg.settings != { }) {
       source = yamlFormat.generate "udiskie-config" cfg.settings;
     };

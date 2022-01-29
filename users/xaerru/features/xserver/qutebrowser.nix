@@ -1,9 +1,7 @@
 { pkgs, inputs, config, ... }:
 
-let
-  colors = config.colorscheme.colors;
-in
-{
+let colors = config.colorscheme.colors;
+in {
   programs.qutebrowser = {
     enable = true;
     loadAutoconfig = true;
@@ -14,7 +12,6 @@ in
           darkmode = {
             enabled = true;
             algorithm = "lightness-hsl";
-            contrast = -.022;
             threshold = {
               text = 150;
               background = 100;
