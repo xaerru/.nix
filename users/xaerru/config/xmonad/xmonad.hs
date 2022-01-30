@@ -49,7 +49,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- launch dmenu
     , ((modm,               xK_p     ), spawn "dmenu_run")
 
-    , ((modm              , xK_u     ), nextMatch History (return True))
+    , ((modm,               xK_u     ), nextMatch History (return True))
     -- close focused window
     , ((modm .|. shiftMask, xK_c     ), kill)
 
@@ -60,10 +60,10 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm .|. shiftMask, xK_space ), setLayout $ XMonad.layoutHook conf)
 
     -- Move to next non empty workspace
-    , ((modm              , xK_n   ), moveTo Next NonEmptyWS)
+    , ((modm,               xK_n   ), moveTo Next NonEmptyWS)
 
     -- Move to previous non empty workspace
-    , ((modm              , xK_d   ), moveTo Prev NonEmptyWS)
+    , ((modm,               xK_d   ), moveTo Prev NonEmptyWS)
 
     -- Move focus to the next window
     , ((modm,               xK_j     ), windows W.focusDown)
@@ -93,16 +93,16 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm,               xK_t     ), withFocused $ windows . W.sink)
 
     -- Increment the number of windows in the master area
-    , ((modm              , xK_comma ), sendMessage (IncMasterN 1))
+    , ((modm,               xK_comma ), sendMessage (IncMasterN 1))
 
     -- Deincrement the number of windows in the master area
-    , ((modm              , xK_period), sendMessage (IncMasterN (-1)))
+    , ((modm,               xK_period), sendMessage (IncMasterN (-1)))
 
     -- Quit xmonad
     , ((modm .|. shiftMask, xK_q     ), io (exitWith ExitSuccess))
 
     -- Restart xmonad
-    , ((modm              , xK_q     ), spawn "xmonad --recompile; xmonad --restart")
+    , ((modm,               xK_q     ), spawn "xmonad --recompile; xmonad --restart")
     ]
     ++
 
