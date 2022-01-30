@@ -63,7 +63,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm,               xK_n   ), moveTo Next NonEmptyWS)
 
     -- Move to previous non empty workspace
-    , ((modm,               xK_d   ), moveTo Prev NonEmptyWS)
+    , ((modm,               xK_o   ), moveTo Prev NonEmptyWS)
 
     -- Move focus to the next window
     , ((modm,               xK_j     ), windows W.focusDown)
