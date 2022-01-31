@@ -47,7 +47,7 @@
 (deflayer dvp
     @    $   *   [  \(   {   +   #   }  \)   ]   &   |   bspc
     tab   ;   ,   .   p   y   f   g   c   r   l   /   \_   \
-    caps   a   o   e   u   i   d   h   t   n   s   -   ret
+    @ctrl   a   o   e   u   i   d   h   t   n   s   -   ret
     @shft   '   q   j   k   x   b   m   w   v   z     @rshft
     @ctrl @mod lalt               @spc              ralt @rmod cmp rctl
 )
