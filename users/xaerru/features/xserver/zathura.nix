@@ -37,7 +37,6 @@ in {
       window-title-basename = true;
       selection-clipboard = "clipboard";
       recolor = true;
-      adjust-open = "width";
     };
   };
 }
