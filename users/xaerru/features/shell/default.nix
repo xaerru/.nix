@@ -5,6 +5,7 @@
   home.packages = with pkgs; [
     cmus
     htop-vim
+    btop
     iftop
     age
     aria
