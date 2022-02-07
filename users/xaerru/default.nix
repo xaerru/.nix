@@ -43,6 +43,8 @@ in rec {
   };
   home.packages = with pkgs; [
     clang-tools
+    emscripten
+    wasmer
     valgrind
     libuv
     rust-analyzer
