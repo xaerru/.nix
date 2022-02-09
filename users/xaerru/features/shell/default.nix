@@ -11,6 +11,9 @@
     aria
     testdisk
     unzip
+    bind
+    traceroute
+    mtr
     torsocks
     taskwarrior
     exa
