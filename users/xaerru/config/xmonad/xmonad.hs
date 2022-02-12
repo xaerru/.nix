@@ -140,6 +140,7 @@ myLayout = tiled ||| Mirror tiled ||| Full
 myManageHook = composeAll
     [ className =? "mpv"            --> doFullFloat
     , className =? "Zathura"        --> viewShift "4"
+    , className =? "MComix"         --> viewShift "4"
     , className =? "Virt-manager"   --> viewShift "5"
     , title     =? "media"          --> viewShift "6"
     , className =? "qBittorrent"    --> viewShift "7"
