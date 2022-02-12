@@ -89,7 +89,7 @@
 
   users.users.xaerru = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "audio" "input" "lxd" "vboxusers" "libvirtd" ];
+    extraGroups = [ "wheel" "audio" "input" "lxd" "vboxusers" "libvirtd" "docker" ];
   };
 
   fonts.fonts = with pkgs; [
