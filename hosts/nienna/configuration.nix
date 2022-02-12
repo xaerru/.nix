@@ -119,6 +119,7 @@
   virtualisation.virtualbox.host.enable = true;
   virtualisation.libvirtd.enable = true;
   virtualisation.lxd.enable = true;
+  virtualisation.docker.enable = true;
 
   system.stateVersion = "21.11";
 }
