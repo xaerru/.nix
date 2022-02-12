@@ -25,6 +25,6 @@
     mpv
     firefox
     keepassxc
-    yacreader
+    mcomix3
   ];
 }
