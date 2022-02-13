@@ -99,7 +99,7 @@ in rec {
         showRandomTip = false;
         authorColors = { "Gauravsingh Sisodia" = "#${colors.base04}"; };
       };
-      keybindings = { universal = { appendNewline = "<tab>"; }; };
+      keybinding = { universal = { appendNewline = "<tab>"; }; };
     };
   };
 }
