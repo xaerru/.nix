@@ -16,7 +16,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-utils.follows = "flake-utils";
     };
-    nix-colors.url = "github:Misterio77/nix-colors";
+    nix-colors = {
+      url = "github:Misterio77/nix-colors";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-utils.follows = "flake-utils";
+    };
   };
 
   outputs = inputs@{ self, nixpkgs, home-manager, kmonad, ... }:

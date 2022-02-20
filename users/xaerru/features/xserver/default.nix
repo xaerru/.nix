@@ -8,7 +8,6 @@
     ./zathura.nix
   ];
   home.packages = with pkgs; [
-    virt-manager
     hsetroot
     qbittorrent
     python39Packages.ueberzug
