@@ -54,7 +54,6 @@ in rec {
     linux-manual
     stylua
     cling
-    rustup
     nodejs
     patchelf
     cached-nix-shell
@@ -74,6 +73,7 @@ in rec {
     hyx
     crystal
     sumneko-lua-language-server
+    rust-bin.stable.latest.default
   ];
   programs.ssh = {
     enable = true;

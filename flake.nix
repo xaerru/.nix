@@ -21,9 +21,14 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-utils.follows = "flake-utils";
     };
+    rust-overlay = {
+      url = "github:oxalica/rust-overlay";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-utils.follows = "flake-utils";
+    };
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, kmonad, ... }:
+  outputs = inputs@{ self, nixpkgs, home-manager, kmonad, rust-overlay, ... }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs { inherit system; };
@@ -68,7 +73,7 @@
           hostname = "nienna";
           features = [ "xserver" "shell" ];
           extraModules = [ kmonad.nixosModule ];
-          extraOverlays = [ kmonad.overlay ];
+          extraOverlays = [ kmonad.overlay rust-overlay.overlay ];
         };
         vana = mkComputer {
           username = "rajveer";
