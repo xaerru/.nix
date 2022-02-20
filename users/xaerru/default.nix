@@ -69,6 +69,10 @@ in rec {
     ninja
     neovim
     nasm
+    hexyl
+    dhex
+    hyx
+    crystal
     sumneko-lua-language-server
   ];
   programs.ssh = {
