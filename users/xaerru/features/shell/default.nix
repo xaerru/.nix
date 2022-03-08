@@ -3,6 +3,7 @@
 {
   imports = [ ./bash.nix ./tmux.nix ./autojump.nix ];
   home.packages = with pkgs; [
+    sfm
     docker-compose
     cmus
     htop-vim
