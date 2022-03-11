@@ -61,10 +61,10 @@
   };
 
   time.timeZone = "Asia/Kolkata";
-  services.kmonad = {
-    enable = true;
-    configfiles = [ ../../users/xaerru/config/kmonad/ducky.kbd ];
-  };
+  #services.kmonad = {
+  #  enable = true;
+  #  configfiles = [ ../../users/xaerru/config/kmonad/ducky.kbd ];
+  #};
 
   i18n.defaultLocale = "en_US.UTF-8";
   console = {
