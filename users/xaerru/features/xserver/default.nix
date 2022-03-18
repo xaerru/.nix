@@ -8,6 +8,7 @@
     ./zathura.nix
   ];
   home.packages = with pkgs; [
+    libreoffice
     hsetroot
     qbittorrent
     python39Packages.ueberzug
