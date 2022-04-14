@@ -15,7 +15,7 @@
       "l." = "exa -a | rg '^.'";
       ".." = "cd ..";
     };
-    sessionVariables = { MANPAGER = "nvim +Man!"; };
+    sessionVariables = { MANPAGER = "nvim +Man!"; EDITOR = "nvim"; };
     bashrcExtra = ''
       ex ()
       {
