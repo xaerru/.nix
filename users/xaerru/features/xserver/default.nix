@@ -23,7 +23,6 @@
     authy
     webcamoid
     mpv
-    firefox
     keepassxc
     mcomix3
   ];

@@ -72,8 +72,8 @@
           username = "xaerru";
           hostname = "nienna";
           features = [ "xserver" "shell" ];
-          extraModules = [ kmonad.nixosModule ];
-          extraOverlays = [ kmonad.overlay rust-overlay.overlay ];
+          extraModules = [ kmonad.nixosModules.default ];
+          extraOverlays = [ kmonad.overlays.default rust-overlay.overlay ];
         };
         vana = mkComputer {
           username = "rajveer";
