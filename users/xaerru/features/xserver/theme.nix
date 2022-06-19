@@ -1,6 +1,6 @@
 { pkgs, inputs, ... }:
 
-with inputs.nix-colors.lib { inherit pkgs; };
+with inputs.nix-colors.lib-contrib { inherit pkgs; };
 
 rec {
   gtk = {
