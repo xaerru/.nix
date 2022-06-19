@@ -1,7 +1,6 @@
 { pkgs, inputs, ... }: {
   imports = [
     ./alacritty.nix
-    ./qutebrowser.nix
     ./xsession.nix
     ./theme.nix
     ./dunst.nix
@@ -12,6 +11,7 @@
     hsetroot
     qbittorrent
     python39Packages.ueberzug
+    anki
     ytfzf
     maim
     xdotool
