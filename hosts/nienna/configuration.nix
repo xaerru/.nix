@@ -65,7 +65,7 @@
     enable = true;
     keyboards = {
         Ducky-One-2-mini = {
-            device = "/dev/input/by-id/usb-Ducky_Ducky_One2_Mini_RGB_DK-V1.08-200925-event-kbd";
+            device = "/dev/input/by-id/usb-Ducky_Ducky_One2_Mini_RGB_DK-V1.10-201231-event-kbd";
             config = builtins.readFile ../../users/xaerru/config/kmonad/ducky.kbd;
             };
         };
