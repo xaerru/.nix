@@ -9,6 +9,7 @@
   home.packages = with pkgs; [
     #libreoffice
     hsetroot
+    tabbed
     #qbittorrent
     python39Packages.ueberzug
     anki

@@ -1,0 +1,36 @@
+From c246dfad04b54efadc0eb204e8f4bdbda36992d5 Mon Sep 17 00:00:00 2001
+From: Gauravsingh Sisodia <xaerru@disroot.org>
+Date: Sat, 9 Jul 2022 01:59:36 +0530
+Subject: feat: change keybinds
+
+---
+ config.def.h | 12 ++++++------
+ 1 file changed, 6 insertions(+), 6 deletions(-)
+
+diff --git a/config.def.h b/config.def.h
+index defa426..ff93190 100644
+--- a/config.def.h
++++ b/config.def.h
+@@ -36,13 +36,13 @@ static Bool npisrelative  = False;
+ #define MODKEY ControlMask
+ static Key keys[] = {
+ 	/* modifier             key        function     argument */
+-	{ MODKEY|ShiftMask,     XK_Return, focusonce,   { 0 } },
+-	{ MODKEY|ShiftMask,     XK_Return, spawn,       { 0 } },
++	{ MODKEY,               XK_Return, focusonce,   { 0 } },
++	{ MODKEY,               XK_Return, spawn,       { 0 } },
+ 
+-	{ MODKEY|ShiftMask,     XK_l,      rotate,      { .i = +1 } },
+-	{ MODKEY|ShiftMask,     XK_h,      rotate,      { .i = -1 } },
+-	{ MODKEY|ShiftMask,     XK_j,      movetab,     { .i = -1 } },
+-	{ MODKEY|ShiftMask,     XK_k,      movetab,     { .i = +1 } },
++	{ MODKEY,               XK_l,      rotate,      { .i = +1 } },
++	{ MODKEY,               XK_h,      rotate,      { .i = -1 } },
++	{ MODKEY,               XK_j,      movetab,     { .i = -1 } },
++	{ MODKEY,               XK_k,      movetab,     { .i = +1 } },
+ 	{ MODKEY,               XK_Tab,    rotate,      { .i = 0 } },
+ 
+ 	{ MODKEY,               XK_grave,  spawn,       SETPROP("_TABBED_SELECT_TAB") },
+-- 
+2.34.1
+
