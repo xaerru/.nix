@@ -45,6 +45,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm,               xK_Return),    spawn "alacritty -e tmux")
     , ((modm,               xK_b),         spawn "brave")
     , ((modm,               xK_i),         spawn "qutebrowser")
+    , ((modm,               xK_z),         spawn "tabbed -c zathura -e")
 
     -- launch dmenu
     , ((modm,               xK_p     ), spawn "dmenu_run")
@@ -139,6 +140,7 @@ myLayout = tiled ||| Mirror tiled ||| Full
 
 myManageHook = composeAll
     [ className =? "mpv"            --> doFullFloat
+    , className =? "tabbed"         --> viewShift "4"
     , className =? "Zathura"        --> viewShift "4"
     , className =? "MComix"         --> viewShift "4"
     , className =? "Brave-browser"  --> doShift   "2"
