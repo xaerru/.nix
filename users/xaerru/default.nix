@@ -53,7 +53,7 @@ in rec {
     #valgrind
     #libuv
     #rust-analyzer
-    #rnix-lsp
+    rnix-lsp
     #bear
     #ctags
     linux-manual
