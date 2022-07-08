@@ -7,6 +7,7 @@
       xsetroot -cursor_name left_ptr
       ~/.fehbg &
       brave &
+      zathura
     '';
     windowManager = {
       xmonad = {

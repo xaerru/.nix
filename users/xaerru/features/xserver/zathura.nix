@@ -37,6 +37,21 @@ in {
       window-title-basename = true;
       selection-clipboard = "clipboard";
       recolor = true;
+      pages-per-row = 2;
+      scroll-page-aware = true;
+      scroll-full-overlap = "0.01";
+      scroll-step = 100;
+      zoom-min = 10;
+      guioptions = "";
     };
+    extraConfig = ''
+      map r reload
+      map p print
+      map i recolor
+      map J zoom out
+      map K zoom in
+      map R rotate
+      map H feedkeys ":exec sh -c \"cat ~/.local/share/zathura/history | grep -Po '\[\K[^\]]*' | dmenu | xargs zathura\""
+    '';
   };
 }
