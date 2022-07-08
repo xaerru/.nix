@@ -16,6 +16,11 @@
       ".." = "cd ..";
     };
     sessionVariables = { MANPAGER = "nvim +Man!"; EDITOR = "nvim"; };
+    profileExtra = ''
+      if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
+        startx
+      fi
+    '';
     bashrcExtra = ''
       ex ()
       {
