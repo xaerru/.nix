@@ -61,6 +61,8 @@
       eno1.useDHCP = true;
       wlo1.useDHCP = true;
     };
+    dhcpcd.wait = "background";
+    dhcpcd.extraConfig = "noarp";
   };
 
   time.timeZone = "Asia/Kolkata";
@@ -97,7 +99,7 @@
 
   users.users.xaerru = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "audio" "input" "lxd" "vboxusers" "libvirtd" "docker" ];
+    extraGroups = [ "wheel" "audio" "input" ];
   };
 
   fonts.fonts = with pkgs; [
@@ -123,11 +125,6 @@
   };
 
   programs.dconf.enable = true;
-
-  virtualisation.libvirtd.enable = true;
-  virtualisation.lxd.enable = true;
-  virtualisation.docker.enable = true;
-
   system.stateVersion = "21.11";
 }
 
