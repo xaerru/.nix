@@ -4,21 +4,21 @@
   imports = [ ./bash.nix ./tmux.nix ./autojump.nix ];
   home.packages = with pkgs; [
     sfm
-    watson
-    docker-compose
+    #watson
+    #docker-compose
     cmus
-    htop-vim
-    btop
-    iftop
+    #htop-vim
+    #btop
+    #iftop
     age
     aria
     testdisk
     unzip
-    bind
-    traceroute
-    mtr
-    torsocks
-    taskwarrior
+    #bind
+    #traceroute
+    #mtr
+    #torsocks
+    #taskwarrior
     exa
     bat
     parted
@@ -28,16 +28,16 @@
     file
     ffmpeg
     fzf
-    ltrace
-    bintools-unwrapped
+    #ltrace
+    #bintools-unwrapped
     acpi
     udiskie
     playerctl
     fd
     ripgrep
-    tor
+    #tor
     weechat
-    spotdl
-    neomutt
+    #spotdl
+    #neomutt
   ];
 }

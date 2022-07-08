@@ -43,19 +43,19 @@ in rec {
   };
   home.packages = with pkgs; [
     clang-tools
-    emscripten
-    wasmer
-    valgrind
-    libuv
-    rust-analyzer
-    rnix-lsp
-    bear
-    ctags
+    #emscripten
+    #wasmer
+    #valgrind
+    #libuv
+    #rust-analyzer
+    #rnix-lsp
+    #bear
+    #ctags
     linux-manual
-    stylua
-    cling
+    #stylua
+    #cling
     nodejs
-    patchelf
+    #patchelf
     cached-nix-shell
     man-pages
     gdb
@@ -63,16 +63,16 @@ in rec {
     nixfmt
     python3
     ghc
-    cmake
-    ninja
+    #cmake
+    #ninja
     feh
     neovim
-    nasm
-    hexyl
-    dhex
-    hyx
-    crystal
-    sumneko-lua-language-server
+    #nasm
+    #hexyl
+    #dhex
+    #hyx
+    #crystal
+    #sumneko-lua-language-server
     (rust-bin.stable.latest.default.override { targets = [ "wasm32-wasi" ]; })
   ];
   programs.ssh = {
