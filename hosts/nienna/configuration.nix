@@ -59,7 +59,7 @@
       };
     };
     interfaces = {
-      eno1.useDHCP = true;
+      #eno1.useDHCP = true;
       wlo1.useDHCP = true;
     };
     dhcpcd.wait = "background";
