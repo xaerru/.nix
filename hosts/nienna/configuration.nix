@@ -35,9 +35,11 @@
       grub = {
         devices = [ "nodev" ];
         enable = true;
+        splashImage = null;
         efiSupport = true;
         useOSProber = true;
         configurationLimit = 21;
+        copyKernels = true;
       };
     };
     kernelPackages = pkgs.linuxPackages_latest;
