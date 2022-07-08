@@ -5,7 +5,8 @@
     initExtra = ''
       udiskie &
       xsetroot -cursor_name left_ptr
-      ~/.fehbg
+      ~/.fehbg &
+      brave &
     '';
     windowManager = {
       xmonad = {
