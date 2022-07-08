@@ -66,6 +66,7 @@ in rec {
     ghc
     cmake
     ninja
+    feh
     neovim
     nasm
     hexyl

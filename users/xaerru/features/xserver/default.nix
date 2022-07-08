@@ -4,7 +4,6 @@
     ./xsession.nix
     ./theme.nix
     ./dunst.nix
-    ./qutebrowser.nix
     ./zathura.nix
   ];
   home.packages = with pkgs; [
