@@ -57,7 +57,6 @@ in rec {
     nodejs
     patchelf
     cached-nix-shell
-    lxc
     man-pages
     gdb
     lua
