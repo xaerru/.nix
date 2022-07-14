@@ -12,7 +12,7 @@
     tabbed
     #qbittorrent
     python39Packages.ueberzug
-    anki
+    anki-bin
     ytfzf
     maim
     xdotool
