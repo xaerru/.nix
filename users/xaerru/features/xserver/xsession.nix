@@ -8,6 +8,7 @@
       ~/.fehbg &
       brave &
       tabbed -c zathura -e &
+      anki &
     '';
     windowManager = {
       xmonad = {
