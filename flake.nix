@@ -42,6 +42,7 @@
               permittedInsecurePackages = [
                 # Authy
                 "electron-9.4.4"
+                "wolfram-engine"
               ];
             };
             overlays = import (./users + "/${username}/overlays")

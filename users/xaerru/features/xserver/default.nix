@@ -7,10 +7,11 @@
     ./zathura.nix
   ];
   home.packages = with pkgs; [
-    #libreoffice
+    libreoffice
+    evince
     hsetroot
     tabbed
-    #qbittorrent
+    qbittorrent
     python39Packages.ueberzug
     anki-bin
     ytfzf
@@ -22,7 +23,7 @@
     xsel
     dmenu
     authy
-    #webcamoid
+    webcamoid
     mpv
     keepassxc
     #mcomix3

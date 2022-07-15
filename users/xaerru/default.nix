@@ -52,13 +52,15 @@ in rec {
     #wasmer
     #valgrind
     #libuv
-    #rust-analyzer
+    rust-analyzer
     rnix-lsp
-    #bear
+    bear
     #ctags
     linux-manual
+    wolfram-engine
+    wolfram-notebook
     #stylua
-    #cling
+    cling
     nodejs
     #patchelf
     cached-nix-shell
@@ -68,15 +70,15 @@ in rec {
     nixfmt
     python3
     ghc
-    #cmake
-    #ninja
+    cmake
+    ninja
     feh
     neovim
     #nasm
     #hexyl
     #dhex
     #hyx
-    #crystal
+    crystal
     #sumneko-lua-language-server
     (rust-bin.stable.latest.default.override { targets = [ "wasm32-wasi" ]; })
   ];
