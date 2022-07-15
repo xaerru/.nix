@@ -1,6 +1,7 @@
 { pkgs, inputs, ... }: {
   imports = [
     ./alacritty.nix
+    ./picom.nix
     ./xsession.nix
     ./theme.nix
     ./dunst.nix
