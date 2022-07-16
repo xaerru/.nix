@@ -97,10 +97,10 @@
     autoRepeatDelay = 300;
     autoRepeatInterval = 15;
   };
-
+  virtualisation.virtualbox.host.enable = true;
   users.users.xaerru = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "audio" "input" ];
+    extraGroups = [ "wheel" "audio" "input" "vboxusers" ];
   };
 
   fonts.fonts = with pkgs; [

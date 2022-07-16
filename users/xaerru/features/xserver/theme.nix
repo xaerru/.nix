@@ -20,4 +20,27 @@ rec {
     enable = true;
     settings = { "Net/ThemeName" = "${gtk.theme.name}"; };
   };
+  systemd.user.services.wallpaper = {
+    Unit = {
+      Description = "Wallpaper service";
+      Wants = "wallpaper.timer";
+    };
+    Service = {
+      Type = "oneshot";
+      ExecStart =
+        "/home/xaerru/.nix/bin/wallpaper.sh";
+    };
+    Install.WantedBy = [ "multi-user.target" ];
+  };
+  systemd.user.timers.wallpaper = {
+    Unit = {
+      Description = "Wallpaper service";
+      Requires = "wallpaper.service";
+    };
+    Timer = {
+      OnBootSec = "1min";
+      OnCalendar = "*-*-* *:*:00";
+    };
+    Install.WantedBy = [ "timers.target" ];
+  };
 }
