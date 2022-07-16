@@ -73,7 +73,7 @@ myBorderWidth   = 1
 
 myModMask       = mod4Mask
 
-myWorkspaces = ["dev", "web", "prac", "sys", "chat", "mus", "sch", "vir", "soc"]
+myWorkspaces = ["dev", "web", "prac", "read", "study", "mus", "sch", "vir", "soc"]
 myWorkspaceIndices = M.fromList $ zip myWorkspaces [1..] -- (,) == \x y -> (x,y)
 
 myNormalBorderColor  = "#181818"
@@ -270,16 +270,16 @@ myLayoutHook = avoidStruts $ mouseResize $ windowArrange $ T.toggleLayouts float
                                  ||| wideAccordion
 
 myManageHook = composeAll
-    [ className =? "mpv"            --> doFullFloat
-    , className =? "tabbed"         --> viewShift "4"
-    , className =? "MComix"         --> viewShift "4"
-    , className =? "Brave-browser"  --> doShift   "2"
-    , className =? "Anki"           --> viewShift "5"
-    , className =? "Virt-manager"   --> viewShift "5"
-    , title     =? "media"          --> viewShift "6"
-    , className =? "qBittorrent"    --> viewShift "7"
-    , className =? "zoom"           --> viewShift "8"
-    , className =? "mpv"            --> viewShift "9"
+    [ className =? "mpv"               --> doFullFloat
+    , className =? "tabbed"            --> viewShift (myWorkspaces !! 3)
+    , className =? "MComix"            --> viewShift (myWorkspaces !! 3)
+    , className =? "Brave-browser"     --> doShift   (myWorkspaces !! 1)
+    , className =? "Anki"              --> viewShift (myWorkspaces !! 4)
+    , className =? "VirtualBox Manager"--> viewShift (myWorkspaces !! 7)
+    , title     =? "media"             --> viewShift (myWorkspaces !! 3)
+    , className =? "qBittorrent"       --> viewShift (myWorkspaces !! 3)
+    , className =? "zoom"              --> viewShift (myWorkspaces !! 6)
+    , className =? "mpv"               --> viewShift (myWorkspaces !! 8)
     ]
   where
     viewShift = doF . liftM2 (.) W.greedyView W.shift
