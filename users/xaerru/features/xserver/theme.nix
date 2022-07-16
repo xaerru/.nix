@@ -38,8 +38,8 @@ rec {
       Requires = "wallpaper.service";
     };
     Timer = {
-      OnBootSec = "1min";
-      OnCalendar = "*-*-* *:*:00";
+      OnBootSec = "1hour";
+      OnCalendar = "hourly";
     };
     Install.WantedBy = [ "timers.target" ];
   };
