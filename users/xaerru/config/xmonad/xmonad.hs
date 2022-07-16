@@ -4,7 +4,8 @@ import Control.Monad (liftM2)
 import System.Exit
 import           XMonad.Actions.MouseResize
 import XMonad.Layout.NoBorders
-import XMonad.Hooks.EwmhDesktops
+import XMonad.Hooks.EwmhDesktops (ewmh)
+import XMonad.Layout.Fullscreen
 import XMonad.Hooks.ManageHelpers
 import           XMonad.Hooks.ManageDocks            (ToggleStruts (..),
                                                       avoidStruts,
@@ -305,12 +306,8 @@ defaults xmproc0 = ewmh $ def {
         mouseBindings      = myMouseBindings,
 
         layoutHook         = myLayoutHook,
-        manageHook         = myManageHook <+> manageDocks,
+        manageHook         = myManageHook <+> manageDocks <+> fullscreenManageHook,
         handleEventHook    = docksEventHook <+> fullscreenEventHook,
-                               -- Uncomment this line to enable fullscreen support on things like YouTube/Netflix.
-                               -- This works perfect on SINGLE monitor systems. On multi-monitor systems,
-                               -- it adds a border around the window if screen does not have focus. So, my solution
-                               -- is to use a keybinding to toggle fullscreen noborders instead.  (M-<Space>)
         logHook            = dynamicLogWithPP
                       (namedScratchpadFilterOutWorkspacePP
                          $ xmobarPP
@@ -347,6 +344,6 @@ defaults xmproc0 = ewmh $ def {
 main :: IO ()
 main = do
     -- Launching three instances of xmobar on their monitors.
-    xmproc0 <- spawnPipe "xmobar $HOME/xmobar.config"
+    xmproc0 <- spawnPipe "xmobar"
     -- the xmonad, ya know...what the WM is named after!
-    xmonad $ ewmh $ defaults xmproc0
+    xmonad $ ewmh $ fullscreenSupportBorder $ defaults xmproc0
