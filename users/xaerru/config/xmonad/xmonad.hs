@@ -344,6 +344,6 @@ defaults xmproc0 = ewmh $ def {
 main :: IO ()
 main = do
     -- Launching three instances of xmobar on their monitors.
-    xmproc0 <- spawnPipe "xmobar /home/xaerru/.config/xmobar/xmobar.config"
+    xmproc0 <- spawnPipe "xmobar /home/xaerru/.config/xmobar/.xmobarrc"
     -- the xmonad, ya know...what the WM is named after!
     xmonad $ ewmh $ fullscreenSupportBorder $ defaults xmproc0
