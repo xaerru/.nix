@@ -3,6 +3,7 @@
     ./alacritty.nix
     ./picom.nix
     ./xsession.nix
+    ./xmobar.nix
     ./theme.nix
     ./dunst.nix
     ./zathura.nix
@@ -10,6 +11,7 @@
   home.packages = with pkgs; [
     libreoffice
     xmobar
+    trayer
     evince
     hsetroot
     tabbed

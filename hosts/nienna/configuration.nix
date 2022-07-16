@@ -106,7 +106,9 @@
   fonts.fonts = with pkgs; [
     noto-fonts
     #noto-fonts-cjk
+    source-code-pro
     noto-fonts-emoji
+    font-awesome_5
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
   ];
 
