@@ -317,7 +317,7 @@ defaults xmproc0 = ewmh $ def {
                               ppHidden = xmobarColor "#81A1C1" "" . wrap "*" "" . clickable,
                               ppHiddenNoWindows = xmobarColor "#B48EAD" "" . clickable,
                               ppTitle = xmobarColor "#b3afc2" "" . shorten 60,
-                              ppSep = "<fc=#666666> <fn=2>|</fn> </fc>",
+                              ppSep = "<fc=#b8b8b8> | </fc>",
                               ppUrgent = xmobarColor "#BF616A" "" . wrap "!" "!",
                               ppExtras = [windowCount],
                               ppOrder = \ (ws : l : t : ex) -> [ws, l] ++ ex ++ [t]
