@@ -38,6 +38,8 @@
     #tor
     weechat
     spotdl
+    taskwarrior
+    vit
     neomutt
   ];
 }

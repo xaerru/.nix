@@ -11,8 +11,6 @@
   home.packages = with pkgs; [
     libreoffice
     xmobar
-    taskwarrior
-    vit
     trayer
     evince
     hsetroot
