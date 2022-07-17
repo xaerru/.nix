@@ -4,12 +4,12 @@
   imports = [ ./bash.nix ./tmux.nix ./autojump.nix ];
   home.packages = with pkgs; [
     sfm
-    #watson
+    watson
     #docker-compose
     cmus
     #htop-vim
-    #btop
-    #iftop
+    btop
+    iftop
     age
     aria
     testdisk
@@ -37,7 +37,7 @@
     ripgrep
     #tor
     weechat
-    #spotdl
-    #neomutt
+    spotdl
+    neomutt
   ];
 }
