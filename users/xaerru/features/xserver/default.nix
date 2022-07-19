@@ -9,7 +9,7 @@
     ./zathura.nix
   ];
   home.packages = with pkgs; [
-    libreoffice
+    onlyoffice-bin
     xmobar
     trayer
     evince
