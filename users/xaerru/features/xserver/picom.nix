@@ -10,6 +10,7 @@ in {
     fadeSteps = [ 4.0e-2 4.0e-2 ];
     menuOpacity = 0.8;
     activeOpacity = 0.95;
+    inactiveOpacity = 0.95;
     wintypes = {
       tooltip = {
         fade = true;
