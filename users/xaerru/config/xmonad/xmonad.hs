@@ -96,10 +96,10 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm .|. shiftMask, xK_c     ), kill)
 
      -- Rotate through the available layout algorithms
-    , ((modm,               xK_space ), sendMessage NextLayout)
+    , ((modm,               xK_d ), sendMessage NextLayout)
 
     --  Reset the layouts on the current workspace to default
-    , ((modm .|. shiftMask, xK_space ), setLayout $ XMonad.layoutHook conf)
+    , ((modm .|. shiftMask, xK_d ), setLayout $ XMonad.layoutHook conf)
 
     -- Move to next non empty workspace
     , ((modm,               xK_n   ), moveTo Next (Not emptyWS))
@@ -336,6 +336,7 @@ defaults xmproc0 = ewmh $ def {
   , ("<XF86AudioRaiseVolume>", spawn "pactl -- set-sink-volume 0 +3%")
   , ("<XF86Calculator>"      , spawn "qalculate-gtk")
   , ("<Print>", spawn "maim -su | xclip -selection clipboard -t image/png")
+  , ("M-f", sendMessage (MT.Toggle NBFULL) >> sendMessage ToggleStruts) -- Toggles noborderfull
   , ( "C-<Print>"
     , spawn "maim -u -i $(xdotool getactivewindow) | xclip -selection clipboard -t image/png"
     )
