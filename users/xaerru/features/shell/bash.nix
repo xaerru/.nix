@@ -18,7 +18,7 @@
     sessionVariables = { MANPAGER = "nvim +Man!"; EDITOR = "nvim"; };
     profileExtra = ''
       if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
-        startx
+        startx &>/dev/null
       fi
     '';
     bashrcExtra = ''

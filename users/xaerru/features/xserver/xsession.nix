@@ -7,8 +7,9 @@
       xsetroot -cursor_name left_ptr
       ~/.fehbg &
       brave &
-      tabbed -c zathura -e &
       anki &
+      qbittorrent &
+      tabbed -c zathura -e &
     '';
     windowManager = {
       xmonad = {

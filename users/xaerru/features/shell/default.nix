@@ -17,7 +17,7 @@
     #bind
     #traceroute
     #mtr
-    #torsocks
+    torsocks
     #taskwarrior
     exa
     bat
@@ -35,7 +35,7 @@
     playerctl
     fd
     ripgrep
-    #tor
+    tor
     weechat
     spotdl
     taskwarrior
