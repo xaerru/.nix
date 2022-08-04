@@ -48,10 +48,11 @@ in
                         , Run Com "/home/xaerru/.nix/bin/song.sh" [] "music" 10
                         , Run Com "/home/xaerru/.nix/bin/sound.sh" [] "sound" 10
                         , Run Com "/home/xaerru/.nix/bin/trayer-padding-icon.sh" [] "trayerpad" 10
+                        , Run Com "python" ["-c", "from datetime import date; print((date(2023,6,1)-date.today()).days)"] "jeeadv" 3600
                         ]
            , sepChar = "%"
            , alignSep = "}{"
-           , template = " <icon=profile.xpm/> <fc=#${colors.base04}>|</fc> %UnsafeStdinReader% }{ <fc=#${colors.base0B}>%music%</fc> <fc=#${colors.base04}>|</fc> <fc=#${colors.base0C}>%uname%</fc> <fc=#${colors.base04}>|</fc> <fc=#${colors.base0B}>%disku%</fc> <fc=#${colors.base04}>|</fc> <fc=#${colors.base0E}>Vol: %sound%</fc> <fc=#${colors.base04}>|</fc> <fc=#${colors.base0D}>%memory%</fc> <fc=#${colors.base04}>|</fc> <fc=#${colors.base0E}>%cpu%</fc> <fc=#${colors.base04}>|</fc> <fc=#${colors.base0D}>%wlo1%</fc> <fc=#${colors.base04}>|</fc> <fc=#${colors.base0B}>%battery%</fc> <fc=#${colors.base04}>|</fc> <fc=#${colors.base07}>%date%</fc> %trayerpad%"
+           , template = " <icon=profile.xpm/> <fc=#${colors.base04}>|</fc> %UnsafeStdinReader% }{ <fc=#${colors.base0B}>%music%</fc> <fc=#${colors.base04}>|</fc> <fc=#${colors.base08}>%jeeadv%</fc> <fc=#${colors.base04}>|</fc> <fc=#${colors.base0C}>%uname%</fc> <fc=#${colors.base04}>|</fc> <fc=#${colors.base0B}>%disku%</fc> <fc=#${colors.base04}>|</fc> <fc=#${colors.base0E}>Vol: %sound%</fc> <fc=#${colors.base04}>|</fc> <fc=#${colors.base0D}>%memory%</fc> <fc=#${colors.base04}>|</fc> <fc=#${colors.base0E}>%cpu%</fc> <fc=#${colors.base04}>|</fc> <fc=#${colors.base0D}>%wlo1%</fc> <fc=#${colors.base04}>|</fc> <fc=#${colors.base0B}>%battery%</fc> <fc=#${colors.base04}>|</fc> <fc=#${colors.base07}>%date%</fc> %trayerpad%"
     '';
   };
 }
