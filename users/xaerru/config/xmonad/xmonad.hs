@@ -278,7 +278,7 @@ myManageHook = composeAll
     , className =? "VirtualBox Manager"--> viewShift (myWorkspaces !! 7)
     , title     =? "media"             --> viewShift (myWorkspaces !! 3)
     , className =? "qBittorrent"       --> viewShift (myWorkspaces !! 7)
-    , className =? "zoom"              --> viewShift (myWorkspaces !! 6)
+    , className =? ".zoom "            --> viewShift (myWorkspaces !! 6)
     , className =? "mpv"               --> viewShift (myWorkspaces !! 8)
     ]
   where
