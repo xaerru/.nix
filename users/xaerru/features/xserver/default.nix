@@ -9,11 +9,15 @@
     ./zathura.nix
   ];
   home.packages = with pkgs; [
-    onlyoffice-bin
-    qutebrowser
+    #onlyoffice-bin
+    #qutebrowser
     xmobar
     trayer
-    evince
+    steam
+    heroic
+    legendary-gl
+    steam-run-native
+    #evince
     hsetroot
     tabbed
     qbittorrent
@@ -27,7 +31,7 @@
     xclip
     xsel
     dmenu
-    authy
+    #authy
     webcamoid
     mpv
     keepassxc
