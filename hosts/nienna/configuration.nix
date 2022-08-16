@@ -106,6 +106,8 @@
     libinput = {
       enable = true;
       touchpad.naturalScrolling = true;
+      mouse.accelProfile = "adaptive";
+      mouse.accelSpeed = "10.0";
     };
     xkbOptions = "compose:ralt";
     autoRepeatDelay = 300;
