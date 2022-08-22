@@ -18,7 +18,6 @@
     ];
   };
     hardware.pulseaudio.support32Bit = true;
-    hardware.steam-hardware.enable = true;
 
   nix = {
     package = pkgs.nixUnstable;

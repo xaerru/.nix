@@ -13,10 +13,6 @@
     #qutebrowser
     xmobar
     trayer
-    steam
-    heroic
-    legendary-gl
-    steam-run-native
     #evince
     hsetroot
     tabbed
