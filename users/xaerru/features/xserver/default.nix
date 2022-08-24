@@ -6,11 +6,11 @@
     ./xmobar.nix
     ./theme.nix
     ./dunst.nix
-    ./zathura.nix
+    #./zathura.nix
   ];
   home.packages = with pkgs; [
-    #onlyoffice-bin
-    #qutebrowser
+    onlyoffice-bin
+    qutebrowser
     xmobar
     trayer
     #evince
