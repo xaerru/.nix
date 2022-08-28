@@ -10,7 +10,6 @@
   ];
   home.packages = with pkgs; [
     onlyoffice-bin
-    qutebrowser
     xmobar
     trayer
     #evince

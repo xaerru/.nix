@@ -118,6 +118,8 @@
     extraGroups = [ "wheel" "audio" "input" "vboxusers" ];
   };
 
+  services.udisks2 = {enable = true;};
+
   fonts.fonts = with pkgs; [
     noto-fonts
     #noto-fonts-cjk
