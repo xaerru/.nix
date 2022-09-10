@@ -9,17 +9,13 @@
     };
     flake-utils = {
       url = "github:numtide/flake-utils";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
     kmonad = {
       url = "github:kmonad/kmonad?dir=nix";
       inputs.nixpkgs.follows = "nixpkgs";
-      inputs.flake-utils.follows = "flake-utils";
     };
     nix-colors = {
       url = "github:Misterio77/nix-colors";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.flake-utils.follows = "flake-utils";
     };
     rust-overlay = {
       url = "github:oxalica/rust-overlay";

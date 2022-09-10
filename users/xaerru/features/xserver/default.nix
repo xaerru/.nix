@@ -6,10 +6,11 @@
     ./xmobar.nix
     ./theme.nix
     ./dunst.nix
-    #./zathura.nix
+    ./zathura.nix
   ];
   home.packages = with pkgs; [
     onlyoffice-bin
+    polymc
     xmobar
     trayer
     #evince
