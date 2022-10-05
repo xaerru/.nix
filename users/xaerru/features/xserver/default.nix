@@ -1,7 +1,7 @@
 { pkgs, inputs, ... }: {
   imports = [
     ./alacritty.nix
-    ./picom.nix
+    #./picom.nix
     ./xsession.nix
     ./xmobar.nix
     ./theme.nix
@@ -11,6 +11,11 @@
   home.packages = with pkgs; [
     onlyoffice-bin
     polymc
+    sxiv
+    pcmanfm
+    googleearth-pro
+    tor-browser-bundle-bin
+    flameshot
     xmobar
     trayer
     #evince
@@ -27,7 +32,7 @@
     xclip
     xsel
     dmenu
-    #authy
+    authy
     webcamoid
     mpv
     keepassxc

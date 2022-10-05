@@ -57,8 +57,8 @@ in rec {
     bear
     #ctags
     linux-manual
-    wolfram-engine
-    wolfram-notebook
+    #wolfram-engine
+    #wolfram-notebook
     #stylua
     cling
     nodejs

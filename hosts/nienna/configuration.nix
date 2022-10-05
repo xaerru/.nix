@@ -77,6 +77,26 @@
     };
     dhcpcd.wait = "background";
     dhcpcd.extraConfig = "noarp";
+    extraHosts = ''
+        127.0.0.1       localhost
+        127.0.0.1       reddit.com
+        127.0.0.1       www.reddit.com
+        127.0.0.1       https://reddit.com
+        127.0.0.1       https://www.reddit.com
+        127.0.0.1       http://www.reddit.com
+        127.0.0.1       https://www.reddit.com/*
+        127.0.0.1       discord.com
+        127.0.0.1       www.discord.com
+        127.0.0.1       https://discord.com
+        127.0.0.1       https://www.discord.com
+        127.0.0.1       http://www.discord.com
+        127.0.0.1       https://www.discord.com/*
+        ::1     ip6-localhost ip6-loopback
+        fe00::0 ip6-localnet
+        ff00::0 ip6-mcastprefix
+        ff02::1 ip6-allnodes
+        ff02::2 ip6-allrouters
+    '';
   };
 
   time.timeZone = "Asia/Kolkata";

@@ -39,6 +39,7 @@
                 # Authy
                 "electron-9.4.4"
                 "wolfram-engine"
+                "googleearth-pro-7.3.4.8248"
               ];
             };
             overlays = import (./users + "/${username}/overlays")
