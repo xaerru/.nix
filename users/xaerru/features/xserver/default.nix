@@ -10,8 +10,10 @@
   ];
   home.packages = with pkgs; [
     onlyoffice-bin
-    polymc
+    appimage-run
+    protonvpn-cli_2
     sxiv
+    gnome.cheese
     pcmanfm
     googleearth-pro
     tor-browser-bundle-bin

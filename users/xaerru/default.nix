@@ -56,7 +56,7 @@ in rec {
     rnix-lsp
     bear
     #ctags
-    linux-manual
+    #linux-manual
     #wolfram-engine
     #wolfram-notebook
     #stylua
@@ -64,7 +64,7 @@ in rec {
     nodejs
     #patchelf
     cached-nix-shell
-    man-pages
+    #man-pages
     gdb
     lua
     nixfmt

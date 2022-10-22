@@ -7,6 +7,7 @@
     watson
     #docker-compose
     cmus
+    mkvtoolnix
     #htop-vim
     btop
     iftop
