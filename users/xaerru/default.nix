@@ -59,7 +59,7 @@ in rec {
     linux-manual
     #wolfram-engine
     #wolfram-notebook
-    #stylua
+    stylua
     cling
     nodejs
     #patchelf
@@ -79,7 +79,7 @@ in rec {
     #dhex
     #hyx
     crystal
-    #sumneko-lua-language-server
+    sumneko-lua-language-server
     (rust-bin.stable.latest.default.override { targets = [ "wasm32-wasi" ]; })
   ];
   programs.ssh = {

@@ -7,6 +7,7 @@
     watson
     #docker-compose
     cmus
+    colorpicker
     mkvtoolnix
     #htop-vim
     btop
