@@ -8,6 +8,7 @@
     #docker-compose
     cmus
     colorpicker
+    hyperfine
     mkvtoolnix
     #htop-vim
     btop
