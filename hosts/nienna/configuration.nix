@@ -91,6 +91,18 @@
         127.0.0.1       https://www.discord.com
         127.0.0.1       http://www.discord.com
         127.0.0.1       https://www.discord.com/*
+        127.0.0.1       youtube.com
+        127.0.0.1       www.youtube.com
+        127.0.0.1       https://youtube.com
+        127.0.0.1       https://www.youtube.com
+        127.0.0.1       http://www.youtube.com
+        127.0.0.1       https://www.youtube.com/*
+        127.0.0.1       primevideo.com
+        127.0.0.1       www.primevideo.com
+        127.0.0.1       https://primevideo.com
+        127.0.0.1       https://www.primevideo.com
+        127.0.0.1       http://www.primevideo.com
+        127.0.0.1       https://www.primevideo.com/*
         ::1     ip6-localhost ip6-loopback
         fe00::0 ip6-localnet
         ff00::0 ip6-mcastprefix
