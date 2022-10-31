@@ -2,7 +2,7 @@
 
 {
   imports = [ ./hardware-configuration.nix ];
-  powerManagement.cpuFreqGovernor = "performance";
+  #powerManagement.cpuFreqGovernor = "performance";
 
   nixpkgs.config.packageOverrides = pkgs: {
     vaapiIntel = pkgs.vaapiIntel.override { enableHybridCodec = true; };

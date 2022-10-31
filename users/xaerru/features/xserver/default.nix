@@ -6,37 +6,36 @@
     ./xmobar.nix
     ./theme.nix
     ./dunst.nix
+    ./qutebrowser.nix
     ./zathura.nix
   ];
   home.packages = with pkgs; [
     onlyoffice-bin
     appimage-run
-    protonvpn-cli_2
+    #protonvpn-cli_2
     sxiv
     gnome.cheese
     pcmanfm
-    googleearth-pro
-    tor-browser-bundle-bin
+    #googleearth-pro
     flameshot
     xmobar
     trayer
     #evince
     hsetroot
     tabbed
-    qbittorrent
+    #qbittorrent
     python39Packages.ueberzug
     anki-bin
-    ytfzf
+    #ytfzf
     maim
     xdotool
     zoom-us
-    brave
+    #brave
     xclip
     xsel
     dmenu
     authy
-    webcamoid
-    mpv
+    #mpv
     keepassxc
     #mcomix3
   ];

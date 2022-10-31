@@ -4,7 +4,7 @@
   imports = [ ./bash.nix ./tmux.nix ./autojump.nix ];
   home.packages = with pkgs; [
     sfm
-    watson
+    #watson
     #docker-compose
     cmus
     colorpicker
@@ -20,13 +20,13 @@
     #bind
     #traceroute
     #mtr
-    torsocks
+    #torsocks
     #taskwarrior
     exa
     bat
     parted
     tmux-mem-cpu-load
-    youtube-dl
+    #youtube-dl
     du-dust
     file
     ffmpeg
@@ -38,7 +38,7 @@
     playerctl
     fd
     ripgrep
-    tor
+    #tor
     weechat
     spotdl
     taskwarrior
