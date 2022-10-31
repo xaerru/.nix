@@ -6,7 +6,6 @@
       udiskie &
       xsetroot -cursor_name left_ptr
       ~/.fehbg &
-      brave &
     '';
     windowManager = {
       xmonad = {

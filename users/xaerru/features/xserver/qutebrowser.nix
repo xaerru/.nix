@@ -1,11 +1,21 @@
 { pkgs, inputs, config, ... }:
 
 let colors = config.colorscheme.colors;
-in {
+in
+{
   programs.qutebrowser = {
     enable = true;
     loadAutoconfig = true;
+    extraConfig = ''
+        c.url.searchengines = {'DEFAULT': "https://www.google.co.in/search?q={}"}
+    '';
     settings = {
+      url = {
+        default_page = "https://www.google.co.in/";
+        start_pages = [
+          "https://www.google.co.in/"
+        ];
+      };
       tabs = { show = "multiple"; };
       colors = {
         webpage = {
