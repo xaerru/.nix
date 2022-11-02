@@ -5,7 +5,8 @@
   home.packages = with pkgs; [
     sfm
     #watson
-    #docker-compose
+    docker-compose
+    ngrok
     cmus
     colorpicker
     hyperfine

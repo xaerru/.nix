@@ -30,7 +30,6 @@
     maim
     xdotool
     zoom-us
-    #brave
     xclip
     xsel
     dmenu
