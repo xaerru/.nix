@@ -42,7 +42,6 @@ in {
       scroll-full-overlap = "0.01";
       scroll-step = 100;
       zoom-min = 10;
-      guioptions = "";
     };
     extraConfig = ''
       map r reload
