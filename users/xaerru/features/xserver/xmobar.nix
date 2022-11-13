@@ -6,10 +6,10 @@ in
   programs.xmobar = {
     enable = true;
     extraConfig = ''
-    Config { font    = "xft:Source Code Pro:pixelsize=10:antialias=true:hinting=true"
-           , additionalFonts = [ "xft:Jetbrains Mono Nerd Font:pixelsize=0:antialias=true:hinting=true"
-                               , "xft:Font Awesome 5 Free Solid:pixelsize=10"
-                               , "xft:Font Awesome 5 Brands:pixelsize=10"
+    Config { font    = "Source Code Pro 10px"
+           , additionalFonts = [ "Jetbrains Mono Nerd Font 0px"
+                               , "Font Awesome 5 Free Solid 10px"
+                               , "Font Awesome 5 Brands 10px"
                                ]
            , bgColor = "#${colors.base00}"
            , fgColor = "#${colors.base08}"

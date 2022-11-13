@@ -16,7 +16,7 @@
     sxiv
     gnome.cheese
     pcmanfm
-    #googleearth-pro
+    googleearth-pro
     flameshot
     xmobar
     trayer
