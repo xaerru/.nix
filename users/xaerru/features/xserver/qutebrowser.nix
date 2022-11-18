@@ -20,7 +20,7 @@ in
       colors = {
         webpage = {
           darkmode = {
-            enabled = true;
+            enabled = false;
             algorithm = "lightness-hsl";
             threshold = {
               text = 150;

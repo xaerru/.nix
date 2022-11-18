@@ -12,7 +12,7 @@
   home.packages = with pkgs; [
     onlyoffice-bin
     appimage-run
-    #protonvpn-cli_2
+    prismlauncher
     sxiv
     gnome.cheese
     pcmanfm
