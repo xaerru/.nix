@@ -61,16 +61,7 @@
 
   networking = {
     hostName = "nienna";
-    wireless = {
-      enable = true;
-      interfaces = [ "wlo1" ];
-      networks = {
-        JoJo = {
-          pskRaw =
-            "25b9c5903c7a501df7c23e6884b272a9a292a895e72d01a1eaf43f860d5d2b09";
-        };
-      };
-    };
+    networkmanager.enable = true;
     interfaces = {
       #eno1.useDHCP = true;
       wlo1.useDHCP = true;
