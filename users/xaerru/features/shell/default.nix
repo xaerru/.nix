@@ -4,6 +4,7 @@
   imports = [ ./bash.nix ./tmux.nix ./autojump.nix ];
   home.packages = with pkgs; [
     sfm
+    spotdl
     gthumb
     #watson
     docker-compose
@@ -41,6 +42,7 @@
     fd
     ripgrep
     #tor
+    tor-browser-bundle-bin
     weechat
     spotdl
     taskwarrior

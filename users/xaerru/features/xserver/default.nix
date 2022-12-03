@@ -23,7 +23,8 @@
     #evince
     hsetroot
     tabbed
-    #qbittorrent
+    qbittorrent
+    firefox
     python39Packages.ueberzug
     anki-bin
     #ytfzf

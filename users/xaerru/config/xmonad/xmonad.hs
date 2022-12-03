@@ -84,7 +84,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- launch a terminal
     [ ((modm,               xK_backslash), spawn "alacritty")
     , ((modm,               xK_Return),    spawn "alacritty -e tmux")
-    , ((modm,               xK_b),         spawn "brave")
+    , ((modm,               xK_b),         spawn "firefox")
     , ((modm,               xK_i),         spawn "qutebrowser")
     , ((modm,               xK_z),         spawn "tabbed -c zathura -e")
 
