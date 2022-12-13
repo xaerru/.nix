@@ -11,6 +11,7 @@
   ];
   home.packages = with pkgs; [
     onlyoffice-bin
+    legendary-gl
     appimage-run
     prismlauncher
     sxiv
@@ -37,6 +38,8 @@
     authy
     #mpv
     keepassxc
+    legendary-gl
+    heroic
     #mcomix3
   ];
 }
