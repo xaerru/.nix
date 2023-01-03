@@ -17,7 +17,7 @@ in rec {
   };
 
   programs.home-manager.enable = true;
-
+  xdg.systemDirs.data = ["/var/lib/flatpak/exports/share" "/home/xaerru/.local/share/flatpak/exports/share"];
   #services.tor.enable = true;
   services.udiskie-custom = {
     enable = true;

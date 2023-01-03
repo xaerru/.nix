@@ -17,7 +17,7 @@
       libvdpau-va-gl
     ];
   };
-    hardware.pulseaudio.support32Bit = true;
+  hardware.pulseaudio.support32Bit = true;
 
   nix = {
     package = pkgs.nixUnstable;
@@ -69,48 +69,53 @@
     dhcpcd.wait = "background";
     dhcpcd.extraConfig = "noarp";
     extraHosts = ''
-        127.0.0.1       localhost
-        127.0.0.1       reddit.com
-        127.0.0.1       www.reddit.com
-        127.0.0.1       https://reddit.com
-        127.0.0.1       https://www.reddit.com
-        127.0.0.1       http://www.reddit.com
-        127.0.0.1       https://www.reddit.com/*
-        127.0.0.1       youtube.com
-        127.0.0.1       www.youtube.com
-        127.0.0.1       https://youtube.com
-        127.0.0.1       https://www.youtube.com
-        127.0.0.1       http://www.youtube.com
-        127.0.0.1       https://www.youtube.com/*
-        127.0.0.1       primevideo.com
-        127.0.0.1       www.primevideo.com
-        127.0.0.1       https://primevideo.com
-        127.0.0.1       https://www.primevideo.com
-        127.0.0.1       http://www.primevideo.com
-        127.0.0.1       https://www.primevideo.com/*
-        127.0.0.1       twitter.com
-        127.0.0.1       www.twitter.com
-        127.0.0.1       https://twitter.com
-        127.0.0.1       https://www.twitter.com
-        127.0.0.1       http://www.twitter.com
-        127.0.0.1       https://www.twitter.com/*
-        ::1     ip6-localhost ip6-loopback
-        fe00::0 ip6-localnet
-        ff00::0 ip6-mcastprefix
-        ff02::1 ip6-allnodes
-        ff02::2 ip6-allrouters
+      127.0.0.1       localhost
+      127.0.0.1       reddit.com
+      127.0.0.1       www.reddit.com
+      127.0.0.1       https://reddit.com
+      127.0.0.1       https://www.reddit.com
+      127.0.0.1       http://www.reddit.com
+      127.0.0.1       https://www.reddit.com/*
+      127.0.0.1       youtube.com
+      127.0.0.1       www.youtube.com
+      127.0.0.1       https://youtube.com
+      127.0.0.1       https://www.youtube.com
+      127.0.0.1       http://www.youtube.com
+      127.0.0.1       https://www.youtube.com/*
+      127.0.0.1       primevideo.com
+      127.0.0.1       www.primevideo.com
+      127.0.0.1       https://primevideo.com
+      127.0.0.1       https://www.primevideo.com
+      127.0.0.1       http://www.primevideo.com
+      127.0.0.1       https://www.primevideo.com/*
+      127.0.0.1       twitter.com
+      127.0.0.1       www.twitter.com
+      127.0.0.1       https://twitter.com
+      127.0.0.1       https://www.twitter.com
+      127.0.0.1       http://www.twitter.com
+      127.0.0.1       https://www.twitter.com/*
+      ::1     ip6-localhost ip6-loopback
+      fe00::0 ip6-localnet
+      ff00::0 ip6-mcastprefix
+      ff02::1 ip6-allnodes
+      ff02::2 ip6-allrouters
     '';
   };
 
+  services.flatpak.enable = true;
+  xdg.portal = {
+    enable = true;
+    extraPortals = with pkgs; [ xdg-desktop-portal-gtk ];
+  };
   time.timeZone = "Asia/Kolkata";
   services.kmonad = {
     enable = true;
     keyboards = {
-        Ducky-One-2-mini = {
-            device = "/dev/input/by-id/usb-Ducky_Ducky_One2_Mini_RGB_DK-V1.10-201231-event-kbd";
-            config = builtins.readFile ../../users/xaerru/config/kmonad/ducky.kbd;
-            };
-        };
+      Ducky-One-2-mini = {
+        device = "/dev/input/by-id/usb-Ducky_Ducky_One2_Mini_RGB_DK-V1.10-201231-event-kbd";
+        config = builtins.readFile ../../users/xaerru/config/kmonad/ducky.kbd;
+      };
+    };
   };
 
   i18n.defaultLocale = "en_US.UTF-8";
@@ -141,7 +146,7 @@
     extraGroups = [ "wheel" "audio" "input" "vboxusers" ];
   };
 
-  services.udisks2 = {enable = true;};
+  services.udisks2 = { enable = true; };
 
   fonts.fonts = with pkgs; [
     noto-fonts
