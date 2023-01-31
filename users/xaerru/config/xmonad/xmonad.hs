@@ -125,6 +125,9 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- Swap the focused window with the previous window
     , ((modm .|. shiftMask, xK_k     ), windows W.swapUp    )
 
+    -- Suspend
+    , ((modm .|. shiftMask, xK_e     ), spawn "systemctl suspend"  )
+
     -- Shrink the master area
     , ((modm,               xK_h     ), sendMessage Shrink)
 
