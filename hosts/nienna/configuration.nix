@@ -19,6 +19,8 @@
   };
   hardware.pulseaudio.support32Bit = true;
 
+  systemd.services.NetworkManager-wait-online.enable = pkgs.lib.mkForce false;
+  systemd.services.systemd-networkd-wait-online.enable = pkgs.lib.mkForce false;
   nix = {
     package = pkgs.nixUnstable;
     extraOptions = ''
@@ -76,18 +78,6 @@
       127.0.0.1       https://www.reddit.com
       127.0.0.1       http://www.reddit.com
       127.0.0.1       https://www.reddit.com/*
-      127.0.0.1       youtube.com
-      127.0.0.1       www.youtube.com
-      127.0.0.1       https://youtube.com
-      127.0.0.1       https://www.youtube.com
-      127.0.0.1       http://www.youtube.com
-      127.0.0.1       https://www.youtube.com/*
-      127.0.0.1       primevideo.com
-      127.0.0.1       www.primevideo.com
-      127.0.0.1       https://primevideo.com
-      127.0.0.1       https://www.primevideo.com
-      127.0.0.1       http://www.primevideo.com
-      127.0.0.1       https://www.primevideo.com/*
       127.0.0.1       twitter.com
       127.0.0.1       www.twitter.com
       127.0.0.1       https://twitter.com

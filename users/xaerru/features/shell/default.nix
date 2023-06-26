@@ -6,14 +6,12 @@
     sfm
     spotdl
     gthumb
-    #watson
     docker-compose
     ngrok
     cmus
     colorpicker
     hyperfine
     mkvtoolnix
-    #htop-vim
     btop
     iftop
     age
@@ -23,25 +21,21 @@
     #bind
     #traceroute
     #mtr
-    #torsocks
-    #taskwarrior
     exa
     bat
     parted
     tmux-mem-cpu-load
-    #youtube-dl
     du-dust
     file
     ffmpeg
     fzf
-    #ltrace
-    #bintools-unwrapped
+    ltrace
+    bintools-unwrapped
     acpi
     udiskie
     playerctl
     fd
     ripgrep
-    #tor
     tor-browser-bundle-bin
     weechat
     spotdl

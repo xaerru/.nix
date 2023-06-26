@@ -48,21 +48,19 @@ in rec {
   };
   home.packages = with pkgs; [
     clang-tools
-    #emscripten
-    #wasmer
-    #valgrind
-    #libuv
+    emscripten
+    wasmer
+    valgrind
+    libuv
     rust-analyzer
     rnix-lsp
     bear
-    #ctags
+    ctags
     linux-manual
-    #wolfram-engine
-    #wolfram-notebook
     stylua
     cling
     nodejs
-    #patchelf
+    patchelf
     cached-nix-shell
     man-pages
     gdb
@@ -74,7 +72,7 @@ in rec {
     ninja
     feh
     neovim
-    #nasm
+    nasm
     #hexyl
     #dhex
     #hyx

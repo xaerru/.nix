@@ -21,14 +21,14 @@
     flameshot
     xmobar
     trayer
-    #evince
+    evince
     hsetroot
     tabbed
     qbittorrent
     firefox
     python39Packages.ueberzug
     anki-bin
-    #ytfzf
+    ytfzf
     maim
     xdotool
     zoom-us
@@ -36,10 +36,10 @@
     xsel
     dmenu
     authy
-    #mpv
+    mpv
     keepassxc
     legendary-gl
     heroic
-    #mcomix3
+    mcomix3
   ];
 }

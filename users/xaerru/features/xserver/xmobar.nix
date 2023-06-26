@@ -48,7 +48,7 @@ in
                         , Run Com "/home/xaerru/.nix/bin/song.sh" [] "music" 10
                         , Run Com "/home/xaerru/.nix/bin/sound.sh" [] "sound" 10
                         , Run Com "/home/xaerru/.nix/bin/trayer-padding-icon.sh" [] "trayerpad" 10
-                        , Run Com "python" ["-c", "from datetime import date; print((date(2023,1,24)-date.today()).days)"] "jeeadv" 3600
+                        , Run Com "python" ["-c", "from datetime import date; print((date(2023,6,4)-date.today()).days)"] "jeeadv" 3600
                         ]
            , sepChar = "%"
            , alignSep = "}{"
