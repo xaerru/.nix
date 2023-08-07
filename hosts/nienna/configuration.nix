@@ -72,12 +72,6 @@
     dhcpcd.extraConfig = "noarp";
     extraHosts = ''
       127.0.0.1       localhost
-      127.0.0.1       reddit.com
-      127.0.0.1       www.reddit.com
-      127.0.0.1       https://reddit.com
-      127.0.0.1       https://www.reddit.com
-      127.0.0.1       http://www.reddit.com
-      127.0.0.1       https://www.reddit.com/*
       127.0.0.1       twitter.com
       127.0.0.1       www.twitter.com
       127.0.0.1       https://twitter.com
@@ -133,7 +127,7 @@
   virtualisation.virtualbox.host.enable = true;
   users.users.xaerru = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "audio" "input" "vboxusers" ];
+    extraGroups = [ "video" "wheel" "audio" "input" "vboxusers" ];
   };
 
   services.udisks2 = { enable = true; };

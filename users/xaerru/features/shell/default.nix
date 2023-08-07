@@ -37,6 +37,9 @@
     fd
     ripgrep
     tor-browser-bundle-bin
+    tor
+    torsocks
+    youtube-dl
     weechat
     spotdl
     taskwarrior
