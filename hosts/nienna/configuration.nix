@@ -37,7 +37,7 @@
         canTouchEfiVariables = true;
         efiSysMountPoint = "/boot";
       };
-      timeout = 0;
+      #timeout = 0;
       grub = {
         devices = [ "nodev" ];
         enable = true;
@@ -50,12 +50,12 @@
     };
     kernelPackages = pkgs.linuxPackages_latest;
     kernelParams = [
-      "quiet"
-      "splash"
-      "vga=current"
-      "rd.systemd.show_status=false"
-      "rd.udev.log_level=3"
-      "udev.log_priority=3"
+      #"quiet"
+      #"splash"
+      #"vga=current"
+      #"rd.systemd.show_status=false"
+      #"rd.udev.log_level=3"
+      #"udev.log_priority=3"
     ];
     consoleLogLevel = 0;
     initrd.verbose = false;
