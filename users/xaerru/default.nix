@@ -78,6 +78,8 @@ in rec {
     #hyx
     crystal
     sumneko-lua-language-server
+    teams
+    filezilla
     (rust-bin.stable.latest.default.override { targets = [ "wasm32-wasi" ]; })
   ];
   programs.ssh = {

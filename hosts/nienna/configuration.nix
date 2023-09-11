@@ -70,6 +70,10 @@
     };
     dhcpcd.wait = "background";
     dhcpcd.extraConfig = "noarp";
+    firewall = {
+      enable = true;
+      allowedTCPPorts = [ 42000 42001 ];
+    };
     extraHosts = ''
       127.0.0.1       localhost
       127.0.0.1       twitter.com
@@ -96,7 +100,7 @@
     enable = true;
     keyboards = {
       Ducky-One-2-mini = {
-        device = "/dev/input/by-id/usb-Ducky_Ducky_One2_Mini_RGB_DK-V1.10-201231-event-kbd";
+        device = "/dev/input/by-path/platform-i8042-serio-0-event-kbd";
         config = builtins.readFile ../../users/xaerru/config/kmonad/ducky.kbd;
       };
     };
@@ -124,7 +128,7 @@
     autoRepeatDelay = 300;
     autoRepeatInterval = 15;
   };
-  virtualisation.virtualbox.host.enable = true;
+  #virtualisation.virtualbox.host.enable = true;
   users.users.xaerru = {
     isNormalUser = true;
     extraGroups = [ "video" "wheel" "audio" "input" "vboxusers" ];
@@ -132,7 +136,9 @@
 
   services.udisks2 = { enable = true; };
 
-  fonts.fonts = with pkgs; [
+  hardware.bluetooth.enable = true;
+  services.blueman.enable = true;
+  fonts.packages = with pkgs; [
     noto-fonts
     #noto-fonts-cjk
     source-code-pro
