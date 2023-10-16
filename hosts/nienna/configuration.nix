@@ -129,9 +129,11 @@
     autoRepeatInterval = 15;
   };
   #virtualisation.virtualbox.host.enable = true;
+  virtualisation.lxd.enable = true;
+  virtualisation.docker.enable = true;
   users.users.xaerru = {
     isNormalUser = true;
-    extraGroups = [ "video" "wheel" "audio" "input" "vboxusers" ];
+    extraGroups = [ "video" "wheel" "audio" "input" "dialout" "vboxusers" "lxd" "docker" ];
   };
 
   services.udisks2 = { enable = true; };
