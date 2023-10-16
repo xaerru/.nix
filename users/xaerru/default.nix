@@ -1,7 +1,5 @@
 { pkgs, features, inputs, config, ... }:
 
-with inputs.nix-colors.lib { inherit pkgs; };
-
 let
   colors = config.colorscheme.colors;
   binPath = "/home/xaerru/.nix/bin";
@@ -78,8 +76,10 @@ in rec {
     #hyx
     crystal
     sumneko-lua-language-server
-    teams
     filezilla
+    distrobox
+    blueman
+    xorg.xhost
     (rust-bin.stable.latest.default.override { targets = [ "wasm32-wasi" ]; })
   ];
   programs.ssh = {
