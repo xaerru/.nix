@@ -10,9 +10,9 @@
       getip = "curl ifconfig.me";
       cdc = "cd && clear";
       lg = "lazygit";
-      ls = "exa -l --color=always --group-directories-first";
-      la = "exa -al --color=always --group-directories-first";
-      "l." = "exa -a | rg '^.'";
+      ls = "eza -l --color=always --group-directories-first";
+      la = "eza -al --color=always --group-directories-first";
+      "l." = "eza -a | rg '^.'";
       ".." = "cd ..";
     };
     sessionVariables = { MANPAGER = "nvim +Man!"; EDITOR = "nvim"; };

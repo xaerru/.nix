@@ -39,7 +39,7 @@ in rec {
     defaultCacheTtlSsh = 34560000;
     maxCacheTtl = 34560000;
     maxCacheTtlSsh = 34560000;
-    sshKeys = [ "13E0B25F8DF3A7D0DAB55F4290D620BE5F61B7CF" ];
+    sshKeys = [ "971C6775AA01488499900C2CD148E93114E64EF7" ];
     extraConfig = ''
       allow-preset-passphrase
     '';
@@ -94,10 +94,10 @@ in rec {
     enable = true;
     package = pkgs.gitFull;
     userName = "Gauravsingh Sisodia";
-    userEmail = "xaerru@disroot.org";
+    userEmail = "xaerru@gmail.com";
     signing = {
       signByDefault = true;
-      key = "68831668597E023C!";
+      key = "360012AC79B436D0";
     };
     extraConfig = { init = { defaultBranch = "main"; }; };
     lfs = { enable = true; };

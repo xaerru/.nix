@@ -21,7 +21,7 @@
     #bind
     #traceroute
     #mtr
-    exa
+    eza
     bat
     parted
     tmux-mem-cpu-load

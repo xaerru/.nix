@@ -4,9 +4,9 @@
   imports = [ ./hardware-configuration.nix ];
   #powerManagement.cpuFreqGovernor = "performance";
 
-  nixpkgs.config.packageOverrides = pkgs: {
-    vaapiIntel = pkgs.vaapiIntel.override { enableHybridCodec = true; };
-  };
+  #nixpkgs.config.packageOverrides = pkgs: {
+    #vaapiIntel = pkgs.vaapiIntel.override { enableHybridCodec = true; };
+  #};
   hardware.opengl = {
     enable = true;
     driSupport32Bit = true;
