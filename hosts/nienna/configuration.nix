@@ -31,7 +31,7 @@
   };
 
   boot = {
-    plymouth.enable = true;
+    #plymouth.enable = true;
     loader = {
       efi = {
         canTouchEfiVariables = true;
@@ -41,7 +41,7 @@
       grub = {
         devices = [ "nodev" ];
         enable = true;
-        splashImage = null;
+        #splashImage = null;
         efiSupport = true;
         useOSProber = true;
         configurationLimit = 21;
@@ -54,11 +54,11 @@
       #"splash"
       #"vga=current"
       #"rd.systemd.show_status=false"
-      #"rd.udev.log_level=3"
-      #"udev.log_priority=3"
+      "rd.udev.log_level=3"
+      "udev.log_priority=3"
     ];
-    consoleLogLevel = 0;
-    initrd.verbose = false;
+    #consoleLogLevel = 0;
+    #initrd.verbose = false;
   };
 
   networking = {
@@ -94,6 +94,7 @@
   xdg.portal = {
     enable = true;
     extraPortals = with pkgs; [ xdg-desktop-portal-gtk ];
+    config.common.default = "gtk";
   };
   time.timeZone = "Asia/Kolkata";
   services.kmonad = {
