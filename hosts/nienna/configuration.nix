@@ -71,22 +71,12 @@
     dhcpcd.wait = "background";
     dhcpcd.extraConfig = "noarp";
     firewall = {
-      enable = true;
+      enable = false;
       allowedTCPPorts = [ 42000 42001 ];
     };
     extraHosts = ''
       127.0.0.1       localhost
-      127.0.0.1       twitter.com
-      127.0.0.1       www.twitter.com
-      127.0.0.1       https://twitter.com
-      127.0.0.1       https://www.twitter.com
-      127.0.0.1       http://www.twitter.com
-      127.0.0.1       https://www.twitter.com/*
-      ::1     ip6-localhost ip6-loopback
-      fe00::0 ip6-localnet
-      ff00::0 ip6-mcastprefix
-      ff02::1 ip6-allnodes
-      ff02::2 ip6-allrouters
+      127.0.0.1       10.67.211.245
     '';
   };
 

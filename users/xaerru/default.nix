@@ -80,6 +80,19 @@ in rec {
     distrobox
     blueman
     xorg.xhost
+    cabal-install
+    haskell-language-server
+    cachix
+    haskellPackages.ghcid
+    python311Packages.jedi-language-server
+    ormolu
+    verilog
+    nmap
+    haskellPackages.hakyll
+    wireshark
+    zulu17 # OpenJDK
+    java-language-server
+    gradle_7
     (rust-bin.stable.latest.default.override { targets = [ "wasm32-wasi" ]; })
   ];
   programs.ssh = {
