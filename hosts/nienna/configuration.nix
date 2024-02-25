@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 {
-  imports = [ ./hardware-configuration.nix ];
+  imports = [ ./hardware-configuration.nix ./cachix.nix ];
   #powerManagement.cpuFreqGovernor = "performance";
 
   #nixpkgs.config.packageOverrides = pkgs: {
@@ -91,6 +91,10 @@
     enable = true;
     keyboards = {
       Ducky-One-2-mini = {
+        device = "/dev/input/by-id/usb-Ducky_Ducky_One2_Mini_RGB_DK-V1.10-201231-event-kbd";
+        config = builtins.readFile ../../users/xaerru/config/kmonad/ducky.kbd;
+      };
+      builtin = {
         device = "/dev/input/by-path/platform-i8042-serio-0-event-kbd";
         config = builtins.readFile ../../users/xaerru/config/kmonad/ducky.kbd;
       };

@@ -10,7 +10,7 @@ in rec {
     username = "xaerru";
     homeDirectory = "/home/xaerru";
     stateVersion = "22.05";
-    sessionPath = [ "$HOME/.nix/bin" ];
+    sessionPath = [ "$HOME/.local/bin" "$HOME/.nix/bin" ];
     sessionVariables = { CUSTOM_BIN = "$HOME/.nix/bin"; };
   };
 
@@ -90,9 +90,11 @@ in rec {
     nmap
     haskellPackages.hakyll
     wireshark
+    verilator
     zulu17 # OpenJDK
     java-language-server
     gradle_7
+    cachix
     (rust-bin.stable.latest.default.override { targets = [ "wasm32-wasi" ]; })
   ];
   programs.ssh = {

@@ -43,7 +43,7 @@
           echo "'$1' is not a valid file"
         fi
       }
-      export PS1="\n\[\033[1;32m\][\[\e]0;\u@\h: \w\a\]\u@\h:\w]\$\[\033[0m\] "
+      export PS1="\n\[$(tput bold)\]\[$(tput setaf 2)\][\u@\h:\w]\\$ \[$(tput sgr0)\]"
     '';
   };
 }
