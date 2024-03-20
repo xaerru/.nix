@@ -119,11 +119,11 @@
       mouse.accelProfile = "adaptive";
       mouse.accelSpeed = "10.0";
     };
-    xkbOptions = "compose:ralt";
+    xkb.options = "compose:ralt";
     autoRepeatDelay = 300;
     autoRepeatInterval = 15;
   };
-  #virtualisation.virtualbox.host.enable = true;
+  virtualisation.virtualbox.host.enable = true;
   virtualisation.lxd.enable = true;
   virtualisation.docker.enable = true;
   users.users.xaerru = {

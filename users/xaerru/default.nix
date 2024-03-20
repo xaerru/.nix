@@ -1,7 +1,7 @@
 { pkgs, features, inputs, config, ... }:
 
 let
-  colors = config.colorscheme.colors;
+  colors = config.colorscheme.palette;
   binPath = "/home/xaerru/.nix/bin";
 in rec {
   imports = [ ./colors.nix ./services/tor.nix ./services/udiskie-custom.nix ]
@@ -46,12 +46,12 @@ in rec {
   };
   home.packages = with pkgs; [
     clang-tools
-    emscripten
-    wasmer
+    #emscripten
+    #wasmer
     valgrind
-    libuv
+    #libuv
     rust-analyzer
-    rnix-lsp
+    #rnix-lsp
     bear
     ctags
     linux-manual
@@ -93,14 +93,15 @@ in rec {
     verilator
     zulu17 # OpenJDK
     java-language-server
-    gradle_7
+    #gradle_7
     cachix
+    openssh
     (rust-bin.stable.latest.default.override { targets = [ "wasm32-wasi" ]; })
   ];
-  programs.ssh = {
-    enable = true;
-    extraConfig = builtins.readFile ./config/ssh/config;
-  };
+  #programs.ssh = {
+    #enable = true;
+    #extraConfig = builtins.readFile ./config/ssh/config;
+  #};
   programs.gpg = {
     enable = true;
     settings.use-agent = false;

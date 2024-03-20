@@ -11,35 +11,34 @@
   ];
   home.packages = with pkgs; [
     onlyoffice-bin
-    legendary-gl
-    appimage-run
+    #legendary-gl
+    #appimage-run
     prismlauncher
     sxiv
-    gnome.cheese
-    pcmanfm
-    googleearth-pro
-    flameshot
+    #gnome.cheese
+    #pcmanfm
+    #googleearth-pro
+    #flameshot
     xmobar
-    trayer
+    #trayer
     evince
     hsetroot
     tabbed
-    qbittorrent
+    #qbittorrent
     firefox
     python39Packages.ueberzug
-    anki-bin
+    #anki-bin
     ytfzf
     maim
     xdotool
-    zoom-us
+    #zoom-us
     xclip
     xsel
     dmenu
     authy
     mpv
     keepassxc
-    legendary-gl
-    heroic
-    mcomix3
+    #heroic
+    #mcomix3
   ];
 }
