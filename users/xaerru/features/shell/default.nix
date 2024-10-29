@@ -27,7 +27,7 @@
     tmux-mem-cpu-load
     du-dust
     file
-    ffmpeg
+    ffmpeg-full
     fzf
     ltrace
     bintools-unwrapped

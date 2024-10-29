@@ -66,7 +66,7 @@
     networkmanager.enable = true;
     interfaces = {
       #eno1.useDHCP = true;
-      wlo1.useDHCP = true;
+      #wlo1.useDHCP = true;
     };
     dhcpcd.wait = "background";
     dhcpcd.extraConfig = "noarp";
@@ -76,7 +76,8 @@
     };
     extraHosts = ''
       127.0.0.1       localhost
-      127.0.0.1       10.67.211.245
+
+      127.0.0.1       www.reddit.com
     '';
   };
 
@@ -126,6 +127,9 @@
   virtualisation.virtualbox.host.enable = true;
   virtualisation.lxd.enable = true;
   virtualisation.docker.enable = true;
+  virtualisation.containers.enable = true;
+  virtualisation.podman.enable = true;
+  virtualisation.podman.defaultNetwork.settings.dns_enabled = true;
   users.users.xaerru = {
     isNormalUser = true;
     extraGroups = [ "video" "wheel" "audio" "input" "dialout" "vboxusers" "lxd" "docker" ];

@@ -31,7 +31,7 @@
     ytfzf
     maim
     xdotool
-    #zoom-us
+    zoom-us
     xclip
     xsel
     dmenu

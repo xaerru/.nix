@@ -71,7 +71,7 @@ in rec {
     feh
     neovim
     nasm
-    #hexyl
+    hexyl
     #dhex
     #hyx
     crystal
@@ -97,6 +97,14 @@ in rec {
     cachix
     openssh
     (rust-bin.stable.latest.default.override { targets = [ "wasm32-wasi" ]; })
+    pwntools
+    openvpn
+    inetutils
+    python311Packages.binwalk-full
+    blender
+    xorg.xdpyinfo
+    obs-studio
+    mysql-workbench
   ];
   #programs.ssh = {
     #enable = true;
