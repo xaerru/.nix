@@ -17,12 +17,19 @@
       libvdpau-va-gl
     ];
   };
-  hardware.pulseaudio.support32Bit = true;
+  #hardware.pulseaudio.support32Bit = true;
+  security.rtkit.enable = true;
+    services.pipewire = {
+      enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      pulse.enable = true;
+  };
 
   systemd.services.NetworkManager-wait-online.enable = pkgs.lib.mkForce false;
   systemd.services.systemd-networkd-wait-online.enable = pkgs.lib.mkForce false;
   nix = {
-    package = pkgs.nixUnstable;
+    package = pkgs.nixVersions.latest;
     extraOptions = ''
       experimental-features = nix-command flakes
       keep-outputs = true
@@ -108,9 +115,6 @@
     keyMap = "us";
   };
 
-  sound.enable = true;
-  hardware.pulseaudio.enable = true;
-
   services.xserver = {
     enable = true;
     displayManager.startx.enable = true;
@@ -145,7 +149,8 @@
     source-code-pro
     noto-fonts-emoji
     font-awesome_5
-    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+    pkgs.nerd-fonts.jetbrains-mono
+    #(nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
   ];
 
   environment.systemPackages = with pkgs; [ vim wget gcc git gnumake lynx ];

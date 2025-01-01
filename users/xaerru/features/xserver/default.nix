@@ -35,7 +35,7 @@
     xclip
     xsel
     dmenu
-    authy
+    #authy
     mpv
     keepassxc
     #heroic

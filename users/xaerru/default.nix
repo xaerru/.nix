@@ -34,7 +34,7 @@ in rec {
   services.gpg-agent = {
     enable = true;
     enableSshSupport = true;
-    pinentryFlavor = "gtk2";
+    pinentryPackage = pkgs.pinentry-gtk2;
     defaultCacheTtl = 34560000;
     defaultCacheTtlSsh = 34560000;
     maxCacheTtl = 34560000;
@@ -100,11 +100,8 @@ in rec {
     pwntools
     openvpn
     inetutils
-    python311Packages.binwalk-full
-    blender
     xorg.xdpyinfo
-    obs-studio
-    mysql-workbench
+    pulseaudio
   ];
   #programs.ssh = {
     #enable = true;

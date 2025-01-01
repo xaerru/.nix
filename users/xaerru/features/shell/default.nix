@@ -9,7 +9,7 @@
     docker-compose
     ngrok
     cmus
-    colorpicker
+    #colorpicker
     hyperfine
     mkvtoolnix
     btop
@@ -39,8 +39,8 @@
     tor-browser-bundle-bin
     tor
     torsocks
-    youtube-dl
-    weechat
+    #youtube-dl
+    #weechat
     spotdl
     taskwarrior
     vit
