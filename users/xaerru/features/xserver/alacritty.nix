@@ -62,7 +62,29 @@ in {
         ];
       };
       env = { TERM = "xterm-256color"; };
-      font = { size = 8; };
+      font = {
+          normal = {
+              family = "JetBrainsMono Nerd Font";
+              style = "Regular";
+          };
+
+          bold = {
+              family = "JetBrainsMono Nerd Font";
+              style = "Bold";
+          };
+
+          italic = {
+              family = "JetBrainsMono Nerd Font";
+              style = "Italic";
+          };
+
+          bold_italic = {
+              family = "JetBrainsMono Nerd Font";
+              style = "Bold Itlaic";
+          };
+
+          size = 8;
+      };
       selection.save_to_clipboard = true;
       window = {
         decorations = "full";
