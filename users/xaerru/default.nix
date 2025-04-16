@@ -26,11 +26,11 @@ in rec {
       };
     };
   };
-  services.gammastep = {
-    enable = true;
-    latitude = 18.64;
-    longitude = 73.77;
-  };
+  # services.gammastep = {
+  #   enable = true;
+  #   latitude = 18.64;
+  #   longitude = 73.77;
+  # };
   services.gpg-agent = {
     enable = true;
     enableSshSupport = true;
