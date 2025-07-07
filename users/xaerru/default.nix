@@ -102,6 +102,7 @@ in rec {
     inetutils
     xorg.xdpyinfo
     pulseaudio
+    light
   ];
   #programs.ssh = {
     #enable = true;
@@ -133,5 +134,23 @@ in rec {
       };
       keybinding = { universal = { appendNewline = "<tab>"; }; };
     };
+  };
+  programs.fish = {
+        enable = true;
+        interactiveShellInit = ''
+            set fish_greeting # Disable greeting
+        '';
+        shellAliases = {
+        v = "nvim";
+        c = "clear";
+        cat = "bat";
+        getip = "curl ifconfig.me";
+        cdc = "cd && clear";
+        lg = "lazygit";
+        ls = "eza -l --color=always --group-directories-first";
+        la = "eza -al --color=always --group-directories-first";
+        "l." = "eza -a | rg '^.'";
+        ".." = "cd ..";
+        };
   };
 }
