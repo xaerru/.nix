@@ -103,7 +103,7 @@
         config = builtins.readFile ../../users/xaerru/config/kmonad/ducky.kbd;
       };
       builtin = {
-        device = "/dev/input/by-path/platform-i8042-serio-0-event-kbd";
+        device = "/dev/input/by-path/pci-0000:80:14.0-usb-0:4:1.0-event-kbd";
         config = builtins.readFile ../../users/xaerru/config/kmonad/ducky.kbd;
       };
     };

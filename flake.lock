@@ -95,6 +95,22 @@
         "type": "github"
       }
     },
+    "nixos-hardware": {
+      "locked": {
+        "lastModified": 1751864458,
+        "narHash": "sha256-itFyC1GnQR6uUyOmSkaQQSVcsYsBPk/dmCB7O3KajZA=",
+        "owner": "xaerru",
+        "repo": "nixos-hardware",
+        "rev": "41d54711008c91c3331d180f502c1a4ab9834f2d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "xaerru",
+        "ref": "master",
+        "repo": "nixos-hardware",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1734424634,
@@ -132,6 +148,7 @@
         "home-manager": "home-manager",
         "kmonad": "kmonad",
         "nix-colors": "nix-colors",
+        "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs",
         "rust-overlay": "rust-overlay"
       }
