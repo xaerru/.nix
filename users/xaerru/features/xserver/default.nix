@@ -26,7 +26,7 @@
     tabbed
     #qbittorrent
     firefox
-    python39Packages.ueberzug
+    # python39Packages.ueberzug
     #anki-bin
     ytfzf
     maim

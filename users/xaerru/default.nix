@@ -96,13 +96,14 @@ in rec {
     #gradle_7
     cachix
     openssh
-    (rust-bin.stable.latest.default.override { targets = [ "wasm32-wasi" ]; })
+    # (rust-bin.stable.latest.default.override { targets = [ "wasm32-wasi" ]; })
     pwntools
     openvpn
     inetutils
     xorg.xdpyinfo
     pulseaudio
     light
+    pavucontrol
   ];
   #programs.ssh = {
     #enable = true;
@@ -139,18 +140,19 @@ in rec {
         enable = true;
         interactiveShellInit = ''
             set fish_greeting # Disable greeting
+            set -g fish_key_bindings fish_vi_key_bindings
         '';
         shellAliases = {
-        v = "nvim";
-        c = "clear";
-        cat = "bat";
-        getip = "curl ifconfig.me";
-        cdc = "cd && clear";
-        lg = "lazygit";
-        ls = "eza -l --color=always --group-directories-first";
-        la = "eza -al --color=always --group-directories-first";
-        "l." = "eza -a | rg '^.'";
-        ".." = "cd ..";
+            v = "nvim";
+            c = "clear";
+            cat = "bat";
+            getip = "curl ifconfig.me";
+            cdc = "cd && clear";
+            lg = "lazygit";
+            ls = "eza -l --color=always --group-directories-first";
+            la = "eza -al --color=always --group-directories-first";
+            "l." = "eza -a | rg '^.'";
+            ".." = "cd ..";
         };
   };
 }
