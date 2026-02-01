@@ -91,8 +91,6 @@ in rec {
     haskellPackages.hakyll
     wireshark
     verilator
-    zulu17 # OpenJDK
-    java-language-server
     #gradle_7
     cachix
     openssh
@@ -104,6 +102,9 @@ in rec {
     pulseaudio
     light
     pavucontrol
+    jdk21_headless
+    maven
+    ant
   ];
   #programs.ssh = {
     #enable = true;
@@ -155,4 +156,5 @@ in rec {
             ".." = "cd ..";
         };
   };
+  programs.man.generateCaches = false;
 }

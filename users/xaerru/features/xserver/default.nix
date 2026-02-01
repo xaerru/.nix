@@ -38,7 +38,8 @@
     #authy
     mpv
     keepassxc
-    #heroic
+    heroic
     #mcomix3
+    jdt-language-server
   ];
 }
