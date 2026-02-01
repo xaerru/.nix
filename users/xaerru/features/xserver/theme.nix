@@ -14,7 +14,7 @@ rec {
   };
   qt = {
     enable = true;
-    platformTheme = "gtk";
+    platformTheme.name = "gtk";
   };
   services.xsettingsd = {
     enable = true;

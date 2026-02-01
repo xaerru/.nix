@@ -42,7 +42,6 @@
     #youtube-dl
     #weechat
     spotdl
-    taskwarrior
     vit
     neomutt
   ];

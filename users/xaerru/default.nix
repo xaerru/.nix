@@ -34,7 +34,7 @@ in rec {
   services.gpg-agent = {
     enable = true;
     enableSshSupport = true;
-    pinentryPackage = pkgs.pinentry-gtk2;
+    pinentry.package = pkgs.pinentry-gtk2;
     defaultCacheTtl = 34560000;
     defaultCacheTtlSsh = 34560000;
     maxCacheTtl = 34560000;
@@ -63,7 +63,7 @@ in rec {
     man-pages
     gdb
     lua
-    nixfmt
+    nixfmt-rfc-style
     python3
     ghc
     cmake

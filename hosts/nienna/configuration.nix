@@ -7,9 +7,9 @@
   #nixpkgs.config.packageOverrides = pkgs: {
     #vaapiIntel = pkgs.vaapiIntel.override { enableHybridCodec = true; };
   #};
-  hardware.opengl = {
+  hardware.graphics = {
     enable = true;
-    driSupport32Bit = true;
+    enable32Bit = true;
     extraPackages = with pkgs; [
       intel-media-driver # LIBVA_DRIVER_NAME=iHD
       vaapiIntel # LIBVA_DRIVER_NAME=i965 (older but works better for Firefox/Chromium)
@@ -113,21 +113,21 @@
     keyMap = "us";
   };
 
+  services.libinput = {
+    enable = true;
+    touchpad.naturalScrolling = true;
+    mouse.accelProfile = "adaptive";
+    mouse.accelSpeed = "10.0";
+  };
   services.xserver = {
     enable = true;
     displayManager.startx.enable = true;
-    libinput = {
-      enable = true;
-      touchpad.naturalScrolling = true;
-      mouse.accelProfile = "adaptive";
-      mouse.accelSpeed = "10.0";
-    };
     xkb.options = "compose:ralt";
     autoRepeatDelay = 300;
     autoRepeatInterval = 15;
   };
   virtualisation.virtualbox.host.enable = true;
-  virtualisation.lxd.enable = true;
+  # virtualisation.lxd.enable = true;
   virtualisation.docker.enable = true;
   virtualisation.containers.enable = true;
   virtualisation.podman.enable = true;
@@ -173,6 +173,6 @@
   };
 
   programs.dconf.enable = true;
-  system.stateVersion = "21.11";
+  system.stateVersion = "22.05";
 }
 
