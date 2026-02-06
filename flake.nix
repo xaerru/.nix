@@ -21,7 +21,7 @@
       url = "github:oxalica/rust-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nixos-hardware.url = "github:xaerru/nixos-hardware/master";
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
   };
 
   outputs = inputs@{ self, nixpkgs, home-manager, kmonad, rust-overlay, nixos-hardware, ... }:
@@ -70,7 +70,7 @@
           username = "xaerru";
           hostname = "nienna";
           features = [ "xserver" "shell" ];
-          extraModules = [ kmonad.nixosModules.default nixos-hardware.nixosModules.lenovo-legion-16irx9h ];
+          extraModules = [ kmonad.nixosModules.default nixos-hardware.nixosModules.lenovo-legion-16iax10h ];
           extraOverlays = [ kmonad.overlays.default rust-overlay.overlays.default ];
         };
         vana = mkComputer {
