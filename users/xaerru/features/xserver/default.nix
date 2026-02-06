@@ -10,7 +10,7 @@
     ./zathura.nix
   ];
   home.packages = with pkgs; [
-    onlyoffice-bin
+    onlyoffice-desktopeditors
     #legendary-gl
     #appimage-run
     prismlauncher

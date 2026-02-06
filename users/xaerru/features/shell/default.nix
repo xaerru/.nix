@@ -3,20 +3,20 @@
 {
   imports = [ ./bash.nix ./tmux.nix ./autojump.nix ];
   home.packages = with pkgs; [
-    sfm
-    spotdl
+    # sfm
+    # spotdl
     gthumb
     docker-compose
     ngrok
     cmus
     #colorpicker
-    hyperfine
-    mkvtoolnix
+    # hyperfine
+    # mkvtoolnix
     btop
     iftop
     age
-    aria
-    testdisk
+    # aria2
+    # testdisk
     unzip
     #bind
     #traceroute
@@ -25,7 +25,7 @@
     bat
     parted
     tmux-mem-cpu-load
-    du-dust
+    dust
     file
     ffmpeg-full
     fzf
@@ -36,13 +36,12 @@
     playerctl
     fd
     ripgrep
-    tor-browser-bundle-bin
-    tor
-    torsocks
+    # tor-browser-bundle-bin
+    # tor
+    # torsocks
     #youtube-dl
     #weechat
-    spotdl
-    vit
-    neomutt
+    # vit
+    # neomutt
   ];
 }

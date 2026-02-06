@@ -63,7 +63,7 @@ in rec {
     man-pages
     gdb
     lua
-    nixfmt-rfc-style
+    nixfmt
     python3
     ghc
     cmake
@@ -74,9 +74,9 @@ in rec {
     hexyl
     #dhex
     #hyx
-    crystal
-    sumneko-lua-language-server
-    filezilla
+    # crystal
+    lua-language-server
+    # filezilla
     distrobox
     blueman
     xorg.xhost
@@ -84,9 +84,9 @@ in rec {
     haskell-language-server
     cachix
     haskellPackages.ghcid
-    python311Packages.jedi-language-server
-    ormolu
-    verilog
+    # python311Packages.jedi-language-server
+    # ormolu
+    # verilog
     nmap
     haskellPackages.hakyll
     wireshark
@@ -117,13 +117,17 @@ in rec {
   programs.git = {
     enable = true;
     package = pkgs.gitFull;
-    userName = "Gauravsingh Sisodia";
-    userEmail = "xaerru@gmail.com";
+    settings = {
+        user = {
+            name = "Gauravsingh Sisodia";
+            email = "xaerru@gmail.com";
+        };
+        init = { defaultBranch = "main"; };
+    };
     signing = {
       signByDefault = true;
       key = "360012AC79B436D0";
     };
-    extraConfig = { init = { defaultBranch = "main"; }; };
     lfs = { enable = true; };
   };
   programs.lazygit = {
